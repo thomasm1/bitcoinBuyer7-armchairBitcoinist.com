@@ -1,0 +1,31 @@
+.del {
+    background:darkred;
+    color:white;
+    border:none;
+    padding:5px 9px;
+    border-radius: 50%;
+    cursor:pointer;
+    float:right;
+}
+.is-selected {
+    background:yellow !important;
+}
+.strong { 
+    padding:2px;
+    font-weight:bold;
+    margin-left:14px;
+
+} 
+.strong-first { 
+    padding:2px;
+    font-weight:bold; 
+
+}
+.post { 
+    padding:2px;
+    white-space: nowrap;  
+}
+p { 
+    border-bottom:1px rgb(150, 149, 149) dotted; 
+    padding:5px;
+}
