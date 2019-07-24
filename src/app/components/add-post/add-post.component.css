@@ -1,0 +1,26 @@
+.btn {
+    cursor:default;
+}
+.btn:hover {
+    background:rgb(158, 112, 112);
+}
+.form-below  {
+    padding-left:10%;
+}
+.disable:hover {
+    color:red;
+}
+/* Put, Post, Delete put, post, delete HTTP methods disabled until AWS Lambda/API-Gateway/DynamoDB API completed */
+.form {
+    display:flex;
+    max-width:80%;
+    margin:auto;
+} 
+.form input[type='text'] {
+    flex: 11;
+    padding:5px;
+    background:rgba(192, 192, 192, 0.349);
+}
+.form input[type='submit'] {
+    flex:1;
+}

@@ -4,5 +4,6 @@ export class Post {
     date:string;
     title:string;
     cat3:string;
+    completed:boolean;
     selected:boolean;
 }

@@ -1,0 +1,14 @@
+.header {
+    padding: 5px;  
+}
+nav   {
+    text-align:center; 
+} 
+nav a {
+    margin:0px;
+    padding:5px 40px;
+}
+nav a:hover {
+    color:white;
+    background:silver;
+}

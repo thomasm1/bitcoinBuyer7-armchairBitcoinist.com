@@ -10,22 +10,23 @@
 .is-selected {
     background:yellow !important;
 }
-.strong { 
-    padding:2px;
-    font-weight:bold;
-    margin-left:14px;
-
-} 
-.strong-first { 
-    padding:2px;
+.strong {   
+    padding:3px;
+    padding-right:10px;
+    margin-left:10px;
     font-weight:bold; 
 
-}
-.post { 
-    padding:2px;
-    white-space: nowrap;  
+}    
+    
+
+span.post#title {
+    
+    max-width:30px !important;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap;  */
 }
 p { 
     border-bottom:1px rgb(150, 149, 149) dotted; 
-    padding:5px;
+    padding:10px; 
 }

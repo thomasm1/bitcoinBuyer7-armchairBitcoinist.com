@@ -26,9 +26,9 @@ a {
 .btn:hover {
     background:#a88d8d;
 }
-h1 { 
+h1,h2 { 
     text-align:center;
 }
-h2, h3,h4,h5,h6 {
+h3,h4,h5,h6 {
     padding:10px 10px; 
 }
