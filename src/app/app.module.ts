@@ -12,18 +12,38 @@ import { ApiComponent } from './components/api/api.component';
 import { ApiItemComponent } from './components/api-item/api-item.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
-import { AboutComponent } from './components/routes/about.component'; 
+import { AboutComponent } from './components/routes/about.component';
+import { ListUsersComponent } from './users/list/list-users.component';
+import { CreateUserComponent } from './users/create/create-user.component';
+import { DisplayUserComponent } from './users/display/display-user.component';
+import { DetailsUserComponent } from './users/details/details-user.component';
+import { DetailsCoinComponent } from './coins/details/details-coin.component';
+import { DisplayCoinComponent } from './coins/display/display-coin.component';
+import { ListCoinsComponent } from './coins/list/list-coins.component';
+import { AddCoinsComponent } from './coins/add/add-coins.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
 
 // import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AboutComponent,
+    HeaderComponent,
+    
     ApiComponent,
     ApiItemComponent,
-    HeaderComponent,
     AddPostComponent,
-    AboutComponent 
+
+    ListUsersComponent,
+    CreateUserComponent,
+    DisplayUserComponent,
+    DetailsUserComponent,
+
+    DetailsCoinComponent,
+    DisplayCoinComponent,
+    ListCoinsComponent,
+    AddCoinsComponent 
   ],
   imports: [
     BrowserModule,
@@ -31,7 +51,8 @@ import { AboutComponent } from './components/routes/about.component';
     AngularFirestoreModule,
     AppRoutingModule, 
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
   providers: [], // ApiService
   bootstrap: [AppComponent]
