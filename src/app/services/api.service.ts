@@ -13,8 +13,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ApiService {
-  // postsUrl: string = 'https://jsonplaceholder.typicode.com/todos';
-  postsUrl:string =  'https://tmm-nov.s3.amazonaws.com/data/posts/may19.json';
+  postsUrl: string = 'https://jsonplaceholder.typicode.com/todos';
+  // postsUrl:string =  'https://tmm-nov.s3.amazonaws.com/data/posts/may19.json';
   postsLimit = '?_limit=5';
 
   constructor(private http: HttpClient) { } 

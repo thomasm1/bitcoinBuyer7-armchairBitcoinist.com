@@ -1,12 +1,6 @@
-
-
 <form class="form" (ngSubmit)="onSubmit()">
-    <input type="text" name="title"  [(ngModel)]="title" placeholder="Add Post ...">
-    <input type="submit" 
-            value="Submit" 
-            class="btn"
-            disabled > 
-    <!-- disabled -->
-</form> 
-<p class="form-below disable">Put, post, delete are UI-only: HTTP methods disabled until AWS Lambda/API-Gateway/DynamoDB API completed</p><br />
-<p class="form-below"><em>{{title}}</em></p>
+    <input type="text" name="title" [(ngModel)]="title" placeholder="Add Post ...">
+    <input type="submit" value="Submit" class="btn">
+
+</form>
+<p><em>{{title}}</em></p>
