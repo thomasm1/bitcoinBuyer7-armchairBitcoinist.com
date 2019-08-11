@@ -15,7 +15,7 @@ import { DataMakersComponent } from './data-makers/data-makers.component';
 
 import { ApiComponent } from './components/api/api.component';
 import { ApiItemComponent } from './components/api-item/api-item.component';
-import { AddPostComponent } from './components/add-post/add-post.component';
+import { AddPostComponent } from './components/add-post/add-post.component'; 
 
 import { ListUsersComponent } from './users/list/list-users.component';
 import { CreateUserComponent } from './users/create/create-user.component';
@@ -86,6 +86,7 @@ import { PageNotFoundComponent } from './shared/page-not-found.component';
     // CreateUserCanDeactivateGuardService,
     // UserDetailsGuardService,
     // UserListResolverService
+
   ], // ApiService
   bootstrap: [AppComponent]
 })
