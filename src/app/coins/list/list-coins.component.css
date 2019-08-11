@@ -1,0 +1,11 @@
+.list-coins {
+    padding: 30px 20px;
+}
+
+pre {
+    padding: 20px;
+    background: lightgray;
+    width: 40%;
+    max-height: 400px;
+    overflow-y: scroll;
+}

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule} from '@angular/fire';
 import { AngularFirestoreModule} from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 
 import { HttpClientModule } from '@angular/common/http'; 
@@ -84,7 +86,9 @@ import { NewsComponent } from './routes/news.component';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(), 
+    AngularFireStorageModule,  
+    AngularFireAuthModule, 
     AppRoutingModule, 
     HttpClientModule,
     FormsModule,

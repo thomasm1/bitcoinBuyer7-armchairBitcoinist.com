@@ -1,10 +1,10 @@
 :host {
     display: inline-block;
-    background: #ccc;
+    /* background: #ccc; */
     padding: 5px;
-    margin: 5px;
+    /* margin: 5px; */
     cursor: pointer;
-    border: outset 3px silver;
+    /* border: outset 3px silver; */
     max-height: 200px;
 }
 

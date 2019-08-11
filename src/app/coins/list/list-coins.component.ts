@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CoinService } from '../../services/coin.service';
+
 
 @Component({
   selector: 'app-list-coins',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListCoinsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private _coinService: CoinService) { }
+  listCoins = []; 
+  ngOnInit() {  
+  this.listCoins = this._coinService.getCoins();  
+  
+  console.log('Coins Component: ', this.listCoins);
   }
-
+   
 }
