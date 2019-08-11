@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "2019-07-30T20:02:04Z",
+      "title": "bitcoinBuyerAPI"
+    },
+    "host": "i0ydvnlkak.execute-api.us-east-1.amazonaws.com",
+    "basePath": "/prod-xml",
+    "schemes": [
+      "https"
+    ],
+    "paths": {
+      "/": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          }
+        }
+      },
+      "/bitcoinbuyer-cointrackerpage": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          }
+        }
+      },
+      "/cointracker": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          }
+        }
+      },
+      "/cointracker-xml": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Empty": {
+        "type": "object",
+        "title": "Empty Schema"
+      }
+    }
+  }

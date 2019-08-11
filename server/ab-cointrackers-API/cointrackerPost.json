@@ -1,0 +1,248 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "2019-07-30T20:08:47Z",
+      "title": "CoinTracker"
+    },
+    "host": "tms42h1lth.execute-api.us-east-1.amazonaws.com",
+    "basePath": "/dev",
+    "schemes": [
+      "https"
+    ],
+    "paths": {
+      "/": {
+        "get": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "text/html"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "headers": {
+                "Content-Type": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "/coins": {
+        "get": {
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "type",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "name": "page",
+              "in": "query",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Coins"
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "operationId": "AddCoin",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "NewCoin",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/NewCoin"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/NewCoinResponse"
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "options": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string"
+                },
+                "Access-Control-Allow-Methods": {
+                  "type": "string"
+                },
+                "Access-Control-Allow-Headers": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "/coins/{coinId}": {
+        "get": {
+          "operationId": "GetCoin",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "coinId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Coin"
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "options": {
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "coinId",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "200 response",
+              "schema": {
+                "$ref": "#/definitions/Empty"
+              },
+              "headers": {
+                "Access-Control-Allow-Origin": {
+                  "type": "string"
+                },
+                "Access-Control-Allow-Methods": {
+                  "type": "string"
+                },
+                "Access-Control-Allow-Headers": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Coins": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Coin"
+        }
+      },
+      "Empty": {
+        "type": "object"
+      },
+      "NewCoinResponse": {
+        "type": "object",
+        "properties": {
+          "coin": {
+            "$ref": "#/definitions/Coin"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Coin": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          }
+        }
+      },
+      "NewCoin": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/definitions/CoinType"
+          },
+          "price": {
+            "type": "number"
+          }
+        }
+      },
+      "CoinType": {
+        "type": "string",
+        "enum": [
+          "dog",
+          "cat",
+          "fish",
+          "bird",
+          "gecko"
+        ]
+      }
+    }
+  }

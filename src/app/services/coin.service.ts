@@ -12,7 +12,7 @@ export class CoinService {
     [
       {
         "id": 1,
-        "user_id":"t",
+        "user_id":"dt",
         "Date": "2019/07/04",
         "Symbol": "BTCUSD",
         "Open": 11976.42,
@@ -24,7 +24,7 @@ export class CoinService {
       },
       {
         "id": 2,
-        "user_id":"te",
+        "user_id":"ted",
         "Date": "2019/07/03",
         "Symbol": "BTCUSD",
         "Open": 10829.18,
@@ -36,7 +36,7 @@ export class CoinService {
       }, 
       {
         "id": 3,
-        "user_id":"te",
+        "user_id":"tsse",
         "Date": "2019/07/04",
         "Symbol": "ETHUSD",
         "Open": 301.79,
@@ -48,7 +48,7 @@ export class CoinService {
       },
       {
         "id": 4,
-        "user_id":"te",
+        "user_id":"tse",
         "Date": "2019/07/03",
         "Symbol": "ETHUSD",
         "Open": 291.25,
