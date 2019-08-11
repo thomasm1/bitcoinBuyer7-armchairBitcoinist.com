@@ -1,14 +1,19 @@
 .header {
-    padding: 5px;  
+    padding: 5px;
 }
-nav   {
-    text-align:center; 
-} 
+
+nav {
+    text-align: center;
+}
+
 nav a {
-    margin:0px;
-    padding:5px 40px;
+    margin: 0px;
+    padding: 5px 40px;
+    text-transform: uppercase;
 }
+
 nav a:hover {
-    color:white;
-    background:silver;
+    color: white;
+    background: silver;
+    text-decoration: none;
 }

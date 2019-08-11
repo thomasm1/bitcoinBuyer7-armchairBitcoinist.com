@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Post } from 'src/app/models/Post'; 
+import { Post } from 'src/app/models/post.model'; 
 import { ApiService } from '../../services/api.service';
 
 @Component({

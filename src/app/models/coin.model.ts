@@ -1,2 +1,2 @@
-export class Coin.Model {
+export class Coin {
 }
