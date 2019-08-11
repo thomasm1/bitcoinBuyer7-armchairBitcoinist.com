@@ -1,13 +1,15 @@
 .form {
-    display:flex;
-    max-width:80%;
-    margin:auto;
-} 
+    display: flex;
+    max-width: 90%;
+    margin: auto;
+}
+
 .form input[type='text'] {
     flex: 11;
-    padding:5px;
-    background:rgba(192, 192, 192, 0.349);
+    padding: 5px;
+    background: rgba(192, 192, 192, 0.349);
 }
+
 .form input[type='submit'] {
-    flex:1;
+    flex: 1;
 }

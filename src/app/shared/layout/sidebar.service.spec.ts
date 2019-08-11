@@ -9,7 +9,7 @@ describe('SidebarService', () => {
     });
   });
 
-  it('should be created', inject([SidebarService], (service: SidebarService) => {
+  it('should be editd', inject([SidebarService], (service: SidebarService) => {
     expect(service).toBeTruthy();
   }));
 });

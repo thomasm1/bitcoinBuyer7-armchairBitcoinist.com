@@ -22,10 +22,10 @@ export class SidebarComponent implements OnInit {
   strategy:string = `
   
 [using a strategy to]
-"... create deep reinforcement learning agents that learn to make money trading Bitcoin.
+"... edit deep reinforcement learning agents that learn to make money trading Bitcoin.
 
-... to experiment with state-of-the-art deep reinforcement learning technologies to see if we can create profitable Bitcoin trading bots. 
-It seems to be the status quo to quickly shut down any attempts to create reinforcement learning algorithms, as it is “the wrong way to go about building a trading algorithm”. 
+... to experiment with state-of-the-art deep reinforcement learning technologies to see if we can edit profitable Bitcoin trading bots. 
+It seems to be the status quo to quickly shut down any attempts to edit reinforcement learning algorithms, as it is “the wrong way to go about building a trading algorithm”. 
 However, recent advances in the field have shown that RL agents are often capable of learning much more than supervised learning agents within the same problem domain." 2 
 
   `

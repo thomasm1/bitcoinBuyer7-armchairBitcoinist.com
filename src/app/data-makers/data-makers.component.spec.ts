@@ -14,12 +14,12 @@ describe('DataMakersComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataMakersComponent);
+    fixture = TestBed.editComponent(DataMakersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should edit', () => {
     expect(component).toBeTruthy();
   });
 });

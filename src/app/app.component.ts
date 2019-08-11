@@ -7,7 +7,6 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError, Navigat
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'THE ARMCHAIR BITCOINIST';
   showLoadingIndicator = true;
 
   constructor(private _router: Router) {

@@ -14,12 +14,12 @@ describe('AddPostComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddPostComponent);
+    fixture = TestBed.editComponent(AddPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should edit', () => {
     expect(component).toBeTruthy();
   });
 });

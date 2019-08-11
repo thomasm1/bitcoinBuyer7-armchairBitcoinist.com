@@ -1,16 +1,8 @@
 <div class="container">
-    <!-- <div style="text-align:center"> 
-  <img alt="tmm Logo" src="https://aws-sensor-temperature.s3.amazonaws.com/header-trans.png">
-</div> -->
-    <h2>
-        <em>  {{ title }}</em>
-    </h2>
-    <div>
-        <hr>
-        <app-header></app-header>
-        <hr>
-    </div>
+
+    <app-header></app-header>
     <!-- <app-api></app-api> -->
     <div *ngIf="showLoadingIndicator" class="spinner"></div>
     <router-outlet></router-outlet>
 </div>
+<app-footer></app-footer>

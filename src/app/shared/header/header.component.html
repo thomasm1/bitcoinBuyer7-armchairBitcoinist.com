@@ -1,0 +1,23 @@
+<!-- <input class="search" placeholder="Search .." onchange="findUser(event)"> -->
+<!-- <div style="text-align:center"> 
+  <img alt="tmm Logo" src="https://aws-sensor-temperature.s3.amazonaws.com/header-trans.png">
+</div> -->
+<header class="header">
+    <span class="login topheader" onclick="googleLogin()">Login</span> &nbsp;
+    <a routerLink="/register"><span class="login register topheader">Register</span></a>
+    <span class="pull-left topheader">Firestore Serverless Database </span> &nbsp;
+    <hr>
+    <nav>
+        <a class=" " routerLink="/">Home</a>
+        <a class=" " routerLink="/console">Console</a>
+        <a class=" " routerLink="/data">Analytics</a>
+        <a class=" " routerLink="/news">Crypto News</a>
+    </nav>
+    <hr>
+    <h2 class="title">
+        {{ title }}
+    </h2>
+    <h5 class="subtitle">{{ subtitle }} </h5>
+
+
+</header>

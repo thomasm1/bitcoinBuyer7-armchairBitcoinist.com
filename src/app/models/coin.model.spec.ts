@@ -1,7 +1,7 @@
 import { Coin } from './coin.model';
 
 describe('Coin', () => {
-  it('should create an instance', () => {
+  it('should edit an instance', () => {
     expect(new Coin()).toBeTruthy();
   });
 });

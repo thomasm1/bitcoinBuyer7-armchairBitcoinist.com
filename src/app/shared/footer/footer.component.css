@@ -1,0 +1,22 @@
+footer {
+    text-align: center;
+    vertical-align: center;
+    padding: 10px 0 20px;
+    background-color: rgba(124, 188, 243, .3);
+    color: #0c4a7f;
+}
+
+h5.copyright {
+    color: #3379b7b4;
+}
+
+.footer-links {
+    line-height: 2;
+}
+
+.footer-links a:hover {
+    border: solid 1px #ffa100;
+    color: blue;
+    text-decoration: none;
+    background: #ffa20041;
+}

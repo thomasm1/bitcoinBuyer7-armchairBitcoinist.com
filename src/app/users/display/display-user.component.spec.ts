@@ -14,12 +14,12 @@ describe('DisplayUserComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DisplayUserComponent);
+    fixture = TestBed.editComponent(DisplayUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should edit', () => {
     expect(component).toBeTruthy();
   });
 });

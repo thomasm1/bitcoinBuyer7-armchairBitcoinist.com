@@ -14,12 +14,12 @@ describe('AddCoinsComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddCoinsComponent);
+    fixture = TestBed.editComponent(AddCoinsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should edit', () => {
     expect(component).toBeTruthy();
   });
 });

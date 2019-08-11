@@ -14,12 +14,12 @@ describe('ApiItemComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApiItemComponent);
+    fixture = TestBed.editComponent(ApiItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should edit', () => {
     expect(component).toBeTruthy();
   });
 });

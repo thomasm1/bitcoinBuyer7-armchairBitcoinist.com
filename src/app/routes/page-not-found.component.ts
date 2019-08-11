@@ -10,12 +10,7 @@ import { Component, OnInit } from '@angular/core';
     <a routerLink=""><h4>back to list ...</h4> </a>
   </div>
   `,
-  styles: [
-    `
-    h3 { color:red }
-    .not-found { background:aliceblue;padding:30px;
-    width:100%;} `
-  ]
+  styles: ['./page-not-found.component.css'  ]
 })
 export class PageNotFoundComponent implements OnInit {
 

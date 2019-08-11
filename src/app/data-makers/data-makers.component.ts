@@ -206,7 +206,7 @@ export class DataMakersComponent implements OnInit {
   }
   });
   console.log(canBuy);
-  // map new arrays -> create array of btc volumes
+  // map new arrays -> edit array of btc volumes
   const coinSymbols = ethBtc.map(function(coin) {
   return coin.Symbol;
   });
@@ -468,7 +468,7 @@ if (btc.Close <= 11000) {
 }
 });
 console.log(canBuy);
-// map new arrays -> create array of btc volumes
+// map new arrays -> edit array of btc volumes
 const coinSymbols = ethBtc.map(function(coin) {
 return coin.Symbol;
 });

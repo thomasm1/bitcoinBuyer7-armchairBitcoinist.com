@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailsCoinComponent } from './details-coin.component';
+import { SidebarComponent } from './sidebar.component';
 
-describe('DetailsCoinComponent', () => {
-  let component: DetailsCoinComponent;
-  let fixture: ComponentFixture<DetailsCoinComponent>;
+describe('SidebarComponent', () => {
+  let component: SidebarComponent;
+  let fixture: ComponentFixture<SidebarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DetailsCoinComponent ]
+      declarations: [ SidebarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.editComponent(DetailsCoinComponent);
+    fixture = TestBed.editComponent(SidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

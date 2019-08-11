@@ -9,8 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/layout/header/header.component';
-import { AboutComponent } from './components/routes/about.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { AboutComponent } from './routes/about.component';
 import { DataMakersComponent } from './data-makers/data-makers.component';
 
 import { ApiComponent } from './components/api/api.component';
@@ -18,7 +18,7 @@ import { ApiItemComponent } from './components/api-item/api-item.component';
 import { AddPostComponent } from './components/add-post/add-post.component'; 
 
 import { ListUsersComponent } from './users/list/list-users.component';
-import { CreateUserComponent } from './users/create/create-user.component';
+import { EditUserComponent } from './users/edit/edit-user.component';
 import { DisplayUserComponent } from './users/display/display-user.component';
 import { DetailsUserComponent } from './users/details/details-user.component';
 
@@ -29,18 +29,23 @@ import { AddCoinsComponent } from './coins/add/add-coins.component';
 
 // import { UserService } from './services/user.service';
 // import { UserListResolverService } from './services/user-list-resolver.service';
-// import { CreateUserCanDeactivateGuardService } from './services/create-user-can-deactivate-guard.service';
+// import { EditUserCanDeactivateGuardService } from './services/edit-user-can-deactivate-guard.service';
 // import { UserDetailsGuardService } from './services/user-details-guard.service';
 
-import { SidebarService } from './components/layout/sidebar.service';
-import { SidebarComponent } from './components/layout/sidebar.component';
-import { SidebarToggleComponent } from './components/layout/sidebar-toggle.component';
-import { DetailbarToggleComponent } from './components/layout/detailbar-toggle.component';
-import { DetailbarComponent } from './components/layout/detailbar.component';
-import { AccordionComponent } from './components/layout/accordion.component';
+import { SidebarService } from './shared/layout/sidebar.service';
+import { SidebarComponent } from './shared/layout/sidebar.component';
+import { SidebarToggleComponent } from './shared/layout/sidebar-toggle.component';
+import { DetailbarToggleComponent } from './shared/layout/detailbar-toggle.component';
+import { DetailbarComponent } from './shared/layout/detailbar.component';
+import { AccordionComponent } from './shared/layout/accordion.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
-import { PageNotFoundComponent } from './shared/page-not-found.component';
+import { PageNotFoundComponent } from './routes/page-not-found.component';
+import { RegisterComponent } from './users/register/register.component';
+import { LandingComponent } from './routes/landing.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { TermsComponent } from './routes/terms.component';
+import { NewsComponent } from './routes/news.component';
 
 // import { ApiService } from './services/api.service';
 
@@ -56,7 +61,7 @@ import { PageNotFoundComponent } from './shared/page-not-found.component';
     AddPostComponent,
 
     ListUsersComponent,
-    CreateUserComponent,
+    EditUserComponent,
     DisplayUserComponent,
     DetailsUserComponent,
 
@@ -69,7 +74,12 @@ import { PageNotFoundComponent } from './shared/page-not-found.component';
     SidebarToggleComponent,
     DetailbarToggleComponent,
     DetailbarComponent,
-    AccordionComponent
+    AccordionComponent,
+    RegisterComponent,
+    LandingComponent,
+    FooterComponent,
+    TermsComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +93,7 @@ import { PageNotFoundComponent } from './shared/page-not-found.component';
   providers: [
     // UserService,
     SidebarService, 
-    // CreateUserCanDeactivateGuardService,
+    // EditUserCanDeactivateGuardService,
     // UserDetailsGuardService,
     // UserListResolverService
 

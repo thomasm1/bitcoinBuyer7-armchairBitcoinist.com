@@ -14,12 +14,12 @@ describe('DetailsUserComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailsUserComponent);
+    fixture = TestBed.editComponent(DetailsUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should edit', () => {
     expect(component).toBeTruthy();
   });
 });
