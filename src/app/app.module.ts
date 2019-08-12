@@ -29,7 +29,7 @@ import { DisplayCoinComponent } from './coins/display/display-coin.component';
 import { ListCoinsComponent } from './coins/list/list-coins.component';
 import { AddCoinsComponent } from './coins/add/add-coins.component';
 
-// import { UserService } from './services/user.service';
+import { UserService } from './services/user.service';
 // import { UserListResolverService } from './services/user-list-resolver.service';
 // import { EditUserCanDeactivateGuardService } from './services/edit-user-can-deactivate-guard.service';
 // import { UserDetailsGuardService } from './services/user-details-guard.service';
@@ -95,7 +95,7 @@ import { NewsComponent } from './routes/news.component';
     NgbModule.forRoot()
   ],
   providers: [
-    // UserService,
+    UserService,
     SidebarService, 
     // EditUserCanDeactivateGuardService,
     // UserDetailsGuardService,

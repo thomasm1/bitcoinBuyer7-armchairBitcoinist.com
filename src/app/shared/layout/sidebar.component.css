@@ -17,6 +17,6 @@
 }
 
 .sidebar {
-    max-height: 550px;
+    max-height: 350px;
     overflow-y: scroll;
 }

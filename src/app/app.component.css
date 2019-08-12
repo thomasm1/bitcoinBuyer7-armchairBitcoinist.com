@@ -2,13 +2,6 @@
 loading.io/css
 */
  
- .firebase {
-     max-height: 200px;
-     max-width: 300px;
-     background-color: lightgray;
-     overflow-y: scroll;
- }
- 
  .container {
      /* border:1px solid rgba(124,188,243,.4); */
      /* border: 1px solid rgba(165, 42, 42, 0.377); */

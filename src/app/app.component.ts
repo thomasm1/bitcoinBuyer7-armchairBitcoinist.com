@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
-// import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-// import { Observable } from 'rxjs';
-
-// export interface Item { name: string; }
 
 @Component({
   selector: 'app-root',
@@ -11,16 +7,11 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError, Navigat
   styleUrls: ['./app.component.css']
 })
 export class AppComponent { 
-  // items: Observable<any[]>;
   showLoadingIndicator = true;
 
   constructor(
-    private _router: Router, 
-    // db: AngularFirestore
+    private _router: Router
     ) {
-    
-      // this.items = db.collection('items').valueChanges();
-
       this._router.events.subscribe((routerEvent: Event) => {
         if (routerEvent instanceof NavigationStart) {
           this.showLoadingIndicator = true;

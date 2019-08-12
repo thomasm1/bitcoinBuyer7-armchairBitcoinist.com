@@ -1,3 +1,10 @@
 .landing {
-    padding: 40px;
+    padding: 20px;
+}
+
+.firebase {
+    max-height: 500px;
+    max-width: 400px;
+    background-color: lightgray;
+    overflow-y: scroll;
 }
