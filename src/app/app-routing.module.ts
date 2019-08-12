@@ -19,6 +19,7 @@ import { DataMakersComponent } from './data-makers/data-makers.component';
 import { PageNotFoundComponent } from './routes/page-not-found.component';
 
 import { ListCoinsComponent } from './coins/list/list-coins.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
 
@@ -28,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'coin-tracker',
-    component: ListCoinsComponent
+    component: ListCoinsComponent, canActivate: [AuthGuard]
   },
   {
     path: 'terms',

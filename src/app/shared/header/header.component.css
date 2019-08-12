@@ -6,12 +6,17 @@ header {
     min-width: 100%;
 }
 
-.welcome {
-    color: brown;
-}
-
 .uid {
     color: blue;
+}
+
+.group {
+    color: brown;
+    font-style: italic;
+    padding: 0 10px;
+    margin-right: 10px;
+    border-right: solid 1px blue;
+    border-left: solid 1px blue;
 }
 
 nav {
@@ -60,9 +65,9 @@ span.login {
 }
 
 span.register {
-    border: solid 1px #ffa100;
+    border: solid 1px #f5d7a3;
     border-radius: 5px;
-    padding: 0 4px;
+    padding: 0 4px 2px;
 }
 
 span.topheader {

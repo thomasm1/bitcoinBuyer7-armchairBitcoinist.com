@@ -7,6 +7,7 @@ export class User {
     email?: string;
     phone?: number; 
     userGroup?: string;
+    groupName?: string;
     contactType?: string;
     dateOfBirth?: Date; 
     isActive?: boolean;
