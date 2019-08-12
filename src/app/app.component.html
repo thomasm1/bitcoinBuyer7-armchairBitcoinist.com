@@ -1,9 +1,15 @@
-<app-header>
-</app-header>
+<app-header></app-header>
 <div class="container">
 
     <!-- <app-api></app-api> -->
+
     <div *ngIf="showLoadingIndicator" class="spinner"></div>
     <router-outlet></router-outlet>
+    <div class="firebase">
+        <!--   <p>Firebase DB:</p>
+         <pre class="text" *ngFor="let item of items | async">
+            {{item | json }}<br /> 
+        </pre> -->
+    </div>
 </div>
 <app-footer></app-footer>

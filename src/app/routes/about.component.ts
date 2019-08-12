@@ -6,18 +6,16 @@ import { Component, OnInit } from '@angular/core';
   <button >
   <tm-sidebar-toggle></tm-sidebar-toggle>
   </button>
-    <div class="about" >
-    <h4> About</h4>
-    
+    <div class="about" > 
     <tm-sidebar></tm-sidebar>
-    </div>
+    </div> 
     <button><a target="_blank" href="mailto:thomas.maestas@ourdailytech.net" title="Email: thomas.maestas@ourdailytech.net">
     Email Contact</a> </button>
   `,
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-   
+  subtitle = 'About';
   constructor() { }
 
   ngOnInit() {

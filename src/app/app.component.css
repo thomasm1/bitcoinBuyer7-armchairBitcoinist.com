@@ -2,6 +2,13 @@
 loading.io/css
 */
  
+ .firebase {
+     max-height: 200px;
+     max-width: 300px;
+     background-color: lightgray;
+     overflow-y: scroll;
+ }
+ 
  .container {
      /* border:1px solid rgba(124,188,243,.4); */
      /* border: 1px solid rgba(165, 42, 42, 0.377); */
@@ -10,7 +17,8 @@ loading.io/css
      border-radius: 6px;
      margin: 0;
      min-width: 100%;
-     min-height: 800px;
+     height: 600px;
+     min-height: 500px;
      background-color: aliceblue;
  }
  

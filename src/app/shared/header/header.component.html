@@ -1,16 +1,33 @@
 <!-- <input class="search" placeholder="Search .." onchange="findUser(event)"> -->
 <!-- <div style="text-align:center"> 
   <img alt="tmm Logo" src="https://aws-sensor-temperature.s3.amazonaws.com/header-trans.png">
+
+   onclick="googleLogin()"
 </div> -->
 <header class="header">
-    <span class="login topheader" onclick="googleLogin()">Login</span> &nbsp;
+
+
+    <span class="login topheader">
+
+        <ng-template #login>
+            <span (click)="auth.googleSignin()">Sign in</span>
+    </ng-template>
+    <span *ngIf="auth.user$ | async as user; else login">
+            <span (click)="auth.signOut()">Sign Out</span>
+    </span>
+    </span> &nbsp;
     <a routerLink="/register"><span class="login register topheader">Register</span></a>
-    <a routerLink="/coin-tracker"><span class="pull-left topheader">CoinTracker <small> using Firestore Serverless Database</small></span></a>
+
+
+    <span class="welcome pull-left topheader" *ngIf="auth.user$ | async as user ">
+        Welcome, <span class="uid">{{ user.uid  }}</span>, to your Armchair Bitcoining Console!
+    </span>
     <hr>
     <nav>
         <a class=" " routerLink="/">Home</a>
         <a class=" " routerLink="/console">Console</a>
         <a class=" " routerLink="/data">Analytics</a>
+        <a class=" " routerLink="/coin-tracker">CoinTracker </a>
         <a class=" " routerLink="/news">Crypto News</a>
     </nav>
     <hr>

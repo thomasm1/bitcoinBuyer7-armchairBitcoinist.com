@@ -4,10 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-landing',
   template: `
   <div class="landing">  
-  <h2>
-  Welcome to your Armchair Bitcoining Console
- </h2>
- </div>
+  </div> 
+
   `,
   styleUrls: ['./landing.component.css']
 })
