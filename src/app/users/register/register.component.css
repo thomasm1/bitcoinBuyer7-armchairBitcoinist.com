@@ -1,0 +1,19 @@
+pre {
+    background:lightblue;
+    max-height:300px;
+    border-radius:5px;
+
+    overflow-y:scroll;
+}
+.submitted {
+    background:white;
+    border-radius:25px;
+    height:200px;
+    width:100%;
+    color:green;
+}
+.required {
+    margin:-1px;
+    padding:0; 
+    color:red;
+}

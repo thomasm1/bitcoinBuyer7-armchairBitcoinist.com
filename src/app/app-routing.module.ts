@@ -10,7 +10,8 @@ import { Routes, RouterModule } from '@angular/router';
 // import { UserDetailsGuardService } from './services/user-details-guard.service';
 
 import { TermsComponent } from './routes/terms.component';
-import { NewsComponent } from './routes/news.component';
+// import { NewsComponent } from './routes/news.component';
+import { AddCoinsComponent } from './coins/add/add-coins.component';
 import { RegisterComponent } from './users/register/register.component';
 import { LandingComponent } from './routes/landing.component';
 import { ApiComponent } from './components/api/api.component';
@@ -37,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: 'news',
-    component: NewsComponent
+    component: AddCoinsComponent
   },
   {
     path: '',

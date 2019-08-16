@@ -1,1 +1,111 @@
-<p>register works!</p>
+<form [formGroup]="regForm"  (ngSubmit)="submitHandler()">
+        <!-- [hidden]="success" -->
+    <hr>
+    <h4>REGISTRATION</h4>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <div>
+                <span class="required">*</span>
+                <mat-form-field>
+                    <input matInput formControlName="name" placeholder="username">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field>
+                    <input matInput formControlName="password" placeholder="password">
+                    <mat-hint align="end"> <em>alphanumeric password&nbsp;&nbsp;</em></mat-hint>
+                    <mat-error *ngIf="password.invalid && password.touched">Oops ... this password doesn't fly!
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput formControlName="age" placeholder="age">
+                    <mat-error *ngIf="age.errors?.min && age.touched">{{ age.errors.min.actual }} is too young to
+                        trade
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput formControlName="email" placeholder="email">
+                    <mat-error *ngIf="email.invalid && email.touched">alpha-numeric-Oops ... This email doesn't look right!
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field>
+                    <mat-select matInput formControlName="userGroup" placeholder="userGroup">
+
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col">
+
+            <pre>
+                    Output: {{ regForm.value | json }}
+                    </pre>
+        </div>
+    </div>
+    <!--     
+        <mat-form-field>
+                <textarea matInput formControlName="email" placeholder="API description"></textarea>
+            </mat-form-field>
+         -->
+    <div formGroupName="cellPhone">
+        <h6>Cell Phone</h6>
+        <mat-form-field>
+            <input matInput formControlName="area" placeholder="area">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="prefix" placeholder="prefix">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="line" placeholder="line">
+        </mat-form-field>
+    </div>
+
+    <div formGroupName="workPhone">
+        <h6>Work Phone</h6>
+        <mat-form-field>
+            <input matInput formControlName="area" placeholder="area">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="prefix" placeholder="prefix">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="line" placeholder="line">
+        </mat-form-field>
+    </div>
+
+    <div formArrayName="phones">
+        <div *ngFor="let phone of phoneForms.controls; let i=index" [formGroupName]="i">
+            <mat-form-field>
+                <input matInput formControlName="area" placeholder="area">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput formControlName="line" placeholder="line">
+            </mat-form-field> &nbsp;
+            <button mat-raised-button color="warn" (click)="deletePhone(i)">Delete</button>
+        </div>
+    </div>
+    <p><button mat-raised-button (click)="addPhone()">Add Phone</button>
+        <p>
+            <hr>
+
+            <h6>
+                <mat-checkbox formControlName="agree">Everything look right?</mat-checkbox> &nbsp;
+                <button mat-raised-button color="primary" [disabled]="regForm.invalid" type="submit"
+                    color="primary">Register</button>
+            </h6>
+            <p class="required">* Required</p>
+</form>
+<div *ngIf="success" class="submitted notification is-success">
+    Yay, submission sent!
+</div>

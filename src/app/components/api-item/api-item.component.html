@@ -1,12 +1,12 @@
 <div [ngClass]="setClasses()">
     <p>
-        <input (change)="onToggle(post)" type="checkbox" /> 
-        <span class="strong">ID: </span><span class="post">{{post.id}}</span> 
-        <span class="strong">Title: </span><span class="post">{{post.title}}</span> 
-        <!-- <span class="strong">Selected: </span><span class="post">{{post.completed}}</span> -->
-        <!-- <span class="strong">Category:</span><span class="post">{{post.cat3}}</span>  <br />
-        <span class="strong">Date:</span><span class="post">{{post.date}}</span>  <br />
-        <span class="strong">Author:</span><span class="post">{{post.author}}</span>   -->
-        <button (click)="onDelete(post)" class="del">x</button>
+        <input (change)="onToggle(api)" type="checkbox" /> 
+        <span class="strong">ID: </span><span class="api">{{api.id}}</span> 
+        <span class="strong">Title: </span><span class="api">{{api.title}}</span> 
+        <!-- <span class="strong">Selected: </span><span class="api">{{api.completed}}</span> -->
+        <!-- <span class="strong">Category:</span><span class="api">{{api.cat3}}</span>  <br />
+        <span class="strong">Date:</span><span class="api">{{api.date}}</span>  <br />
+        <span class="strong">Author:</span><span class="api">{{api.author}}</span>   -->
+        <button (click)="onDelete(api)" class="del">x</button>
     </p>
 </div>

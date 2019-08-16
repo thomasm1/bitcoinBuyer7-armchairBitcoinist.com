@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Post } from 'src/app/models/post.model'; 
+import { Api } from 'src/app/models/api.model'; 
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -8,8 +8,8 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./api-item.component.css']
 })
 export class ApiItemComponent implements OnInit {
-  @Input() post: Post;
-  @Output() deletePost: EventEmitter<Post> = new EventEmitter();
+  @Input() api: Api;
+  @Output() deleteApi: EventEmitter<Api> = new EventEmitter();
 
   constructor(private apiService:ApiService) { }
 
@@ -17,23 +17,23 @@ export class ApiItemComponent implements OnInit {
   }
   setClasses() {
     let classes= {
-      post:true,
-      'is-selected': this.post.selected, 
-      'is-completed': this.post.completed
+      api:true,
+      'is-selected': this.api.selected, 
+      'is-completed': this.api.completed
     } 
     return classes
   }
 
-  onToggle(post) {
+  onToggle(api) {
     // Toggle in UI
-    post.selected = !post.selected;
-    post.completed = !post.completed;
+    api.selected = !api.selected;
+    api.completed = !api.completed;
 
     // Toggle on server-side
-    this.apiService.toggleSelected(post).subscribe(post => console.log(post));
+    this.apiService.toggleSelected(api).subscribe(api => console.log(api));
   }
 
-  onDelete(post) {
-   this.deletePost.emit(post);
+  onDelete(api) {
+   this.deleteApi.emit(api);
   }
 }

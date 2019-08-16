@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
-import { Post } from '../../models/post.model';
+import { Api } from '../../models/api.model';
 
 @Component({
   selector: 'app-api',
@@ -8,28 +8,28 @@ import { Post } from '../../models/post.model';
   styleUrls: ['./api.component.css']
 })
 export class ApiComponent implements OnInit {
-  posts: Post[];
+  apis: Api[];
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    //  this.posts = this.apiService.getPosts();
-    this.apiService.getPosts().subscribe(posts => {
-      this.posts = posts;
+    //  this.apis = this.apiService.getApis();
+    this.apiService.getApis().subscribe(apis => {
+      this.apis = apis;
     });
   }
 
-  deletePost(post: Post) {
+  deleteApi(api: Api) {
     // remove in UI
-    this.posts = this.posts.filter(p => p.id !== post.id);
+    this.apis = this.apis.filter(p => p.id !== api.id);
     //remove serverside
-    this.apiService.deletePost(post).subscribe();
+    this.apiService.deleteApi(api).subscribe();
   }
 
-  addPost(post: Post) {
+  addApi(api: Api) {
     //add serverside
-    this.apiService.addPost(post).subscribe(post => {
-      this.posts.push(post);
+    this.apiService.addApi(api).subscribe(api => {
+      this.apis.push(api);
     });
   }
 

@@ -1,11 +1,11 @@
 
 
-<app-add-post
-(addPost)="addPost($event)">
-</app-add-post>
+<app-add-api
+(addApi)="addApi($event)">
+</app-add-api>
 <hr>
 
-<app-api-item *ngFor="let post of posts" 
-[post]="post"
-(deletePost)="deletePost($event)"> 
+<app-api-item *ngFor="let api of apis" 
+[api]="api"
+(deleteApi)="deleteApi($event)"> 
 </app-api-item>
