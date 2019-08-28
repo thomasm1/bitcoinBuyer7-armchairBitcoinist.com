@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"armchairamc477cabf": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+    "armchairam": {
+        "awscloudformation": {
+            "AuthRoleName": "armchairam-armchairam-20190827231318-authRole",
+            "UnauthRoleArn": "arn:aws:iam::540208464685:role/armchairam-armchairam-20190827231318-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::540208464685:role/armchairam-armchairam-20190827231318-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "armchairam-armchairam-20190827231318-deployment",
+            "UnauthRoleName": "armchairam-armchairam-20190827231318-unauthRole",
+            "StackName": "armchairam-armchairam-20190827231318",
+            "StackId": "arn:aws:cloudformation:us-east-1:540208464685:stack/armchairam-armchairam-20190827231318/89ddda70-c952-11e9-9d77-0a4c9dfbdd94"
+        },
+        "categories": {
+            "auth": {
+                "armchairamc477cabf": {}
+            }
+        }
+    }
+}
