@@ -1,11 +1,33 @@
-
-
-<app-add-api
-(addApi)="addApi($event)">
+<app-add-api (addApi)="addApi($event)">
 </app-add-api>
 <hr>
 
-<app-api-item *ngFor="let api of apis" 
-[api]="api"
-(deleteApi)="deleteApi($event)"> 
+<app-api-item *ngFor="let api of apis" [api]="api" (deleteApi)="deleteApi($event)">
 </app-api-item>
+<!-- <div align="center">
+    <h3>Serverless API Serving Bitcoin Prices</h3>
+</div>
+<div>
+    <code>
+    <span>1.) AWS API Gateway Endpoint <em>using</em>...</span><br />
+    <span> 2.) AWS Route 53 A Record Set Alias <em>using</em>...</span><br />
+    <span> 3.) AWS S3 files. GET Method button <em>triggers ...</em></span><br />
+    <span> 4.) AWS Lambda Function <em>returning ...</em> JSON data. </span>
+</code>
+    <div align="center">
+        <button class="btn btn-primary" onclick="myFunction()">Make HTTP Call</button>
+    </div>
+    <div class="row">
+        <div class="dataXMLH col col-xs-6">
+            <h5>Response from XMLHttpRequest:</h5>
+            <div id="tom-tom">
+            </div>
+        </div>
+        <div class="dataXMLH col col-xs-6">
+            <h5>Bitcoin Daily Prices:</h5>
+            <ul id="bitcoin">
+            </ul>
+        </div>
+    </div>
+    <code>curl -X GET "https://jdkxd2ny04.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction"</code>
+</div> -->

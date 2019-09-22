@@ -21,6 +21,7 @@ import { PageNotFoundComponent } from './routes/page-not-found.component';
 
 import { ListCoinsComponent } from './coins/list/list-coins.component';
 import { AuthGuard } from './services/auth.guard';
+import { HomeComponent } from './routes/home.component';
 
 const routes: Routes = [
 
@@ -41,7 +42,7 @@ const routes: Routes = [
     component: AddCoinsComponent
   },
   {
-    path: '',
+    path: 'traders',
     component: LandingComponent
   },
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'data',
     component: DataMakersComponent
+  },
+  {
+    path: '', 
+    component: HomeComponent
   },
 
   { path: 'notfound', component: PageNotFoundComponent },

@@ -56,6 +56,7 @@ import { SidebarToggleComponent } from './shared/layout/sidebar-toggle.component
 import { DetailbarToggleComponent } from './shared/layout/detailbar-toggle.component';
 import { DetailbarComponent } from './shared/layout/detailbar.component';
 import { AccordionComponent } from './shared/layout/accordion.component';
+import { HomeComponent } from './routes/home.component';
 
 // import { ApiService } from './services/api.service';
 
@@ -91,7 +92,8 @@ import { AccordionComponent } from './shared/layout/accordion.component';
     SidebarToggleComponent,
     DetailbarToggleComponent,
     DetailbarComponent,
-    AccordionComponent
+    AccordionComponent,
+    HomeComponent
   ],
 
   imports: [

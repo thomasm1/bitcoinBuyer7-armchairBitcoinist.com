@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataMakersComponent implements OnInit {
  
-  Console:string = ''; //Array manipulation outputs to dev console.
+  Console:string = 'Array manipulation outputs to dev console ==>';  
  
   btc2019String = ` 
   [
