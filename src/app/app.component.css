@@ -12,8 +12,8 @@ loading.io/css
      min-width: 100%;
      height: 800px;
      min-height: 500px;
-     background-image: url(src/assets/silverchip.png);
-     background-color: rgba(240, 248, 255, 0.534)
+     background-color: rgba(144, 184, 219, 0.479);
+     background-image: url('/assets/greeninvert5.png');
  }
  
  .spinner {

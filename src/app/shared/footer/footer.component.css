@@ -3,8 +3,9 @@ footer {
     vertical-align: center;
     padding: 10px 0 20px;
     margin: 0;
-    background-color: rgba(124, 188, 243, .3);
-    color: #0c4a7f;
+    background-color: rgba(144, 184, 219, .8);
+    background-image: url('/assets/greeninvert5.png');
+    color: #004581;
 }
 
 h5.copyright {

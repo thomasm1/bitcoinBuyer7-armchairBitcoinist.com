@@ -1,5 +1,5 @@
-<form [formGroup]="regForm"  (ngSubmit)="submitHandler()">
-        <!-- [hidden]="success" -->
+<form [formGroup]="regForm" (ngSubmit)="submitHandler()">
+    <!-- [hidden]="success" -->
     <hr>
     <h4>REGISTRATION</h4>
     <hr>
@@ -24,8 +24,8 @@
             <div>
                 <mat-form-field>
                     <input matInput formControlName="age" placeholder="age">
-                    <mat-error *ngIf="age.errors?.min && age.touched">{{ age.errors.min.actual }} is too young to
-                        trade
+                    <mat-hint align="end"> <em>Must be 18 years to trade&nbsp;&nbsp;</em></mat-hint>
+                    <mat-error *ngIf="age.errors?.min && age.touched">{{ age.errors.min.actual }} is too young to trade
                     </mat-error>
                 </mat-form-field>
             </div>
@@ -40,7 +40,16 @@
             <div>
                 <mat-form-field>
                     <mat-select matInput formControlName="userGroup" placeholder="userGroup">
+                        <mat-option></mat-option>
+                        <mat-option>CoinTrader</mat-option>
+                        <mat-option>CoinTracker</mat-option>
+                        <mat-option>CoinWatcher (free)</mat-option>
+                        <mat-option>AltCoinWatcher (free)</mat-option>
+                        <!-- TODO: MAKE USERGROUP SERVICE! -->
 
+                        <!-- <ng-container *ngFor="let userGroup of userGroupService.array">
+                            <mat-option value="{{userGroup.$key}}">{{userGroup.code}}-{{userGroup.name}}</mat-option>
+                        </ng-container> -->
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -101,8 +110,7 @@
 
             <h6>
                 <mat-checkbox formControlName="agree">Everything look right?</mat-checkbox> &nbsp;
-                <button mat-raised-button color="primary" [disabled]="regForm.invalid" type="submit"
-                    color="primary">Register</button>
+                <button mat-raised-button color="primary" [disabled]="regForm.invalid" type="submit" color="primary">Register</button>
             </h6>
             <p class="required">* Required</p>
 </form>

@@ -1,6 +1,7 @@
 header {
-    background-color: rgba(124, 188, 243, .1);
-    color: #0c4a7f;
+    background-color: rgba(144, 184, 219, .7);
+    background-image: url('/assets/greeninvert5.png');
+    color: #004581;
     border-radius: 5px;
     padding: 5px;
     min-width: 100%;
@@ -64,13 +65,14 @@ span.login {
 }
 
 span.register {
+    color: #00345f;
+    background-color: #71a9eb7d;
     border: solid 1px #f5d7a3;
     border-radius: 5px;
     padding: 0 4px 2px;
 }
 
 span.topheader {
-    color: #337ab7;
     font-size: 1rem;
     cursor: pointer;
     line-height: 1.2;
