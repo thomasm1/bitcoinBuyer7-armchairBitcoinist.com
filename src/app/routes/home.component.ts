@@ -1,13 +1,17 @@
 // TODO ...
 // switch xhttp to http service
 import { Component, OnInit } from '@angular/core'; 
-
+import { LambdaPriceService } from '../services/lambda-price.service';
+import { Price } from '../models/price.model';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  
+  // price:Price[];
+  prices:any;
   coinLambda = function(coinUrl) {  
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -31,7 +35,7 @@ export class HomeComponent implements OnInit {
 		  <hr>
 		  </li>
 		  `;
-   document.getElementById('coinFormat').innerHTML += coins;
+   document.getElementById('coin-update').innerHTML += coins;
                     }
                 } 
             };
@@ -53,12 +57,11 @@ console.log("Oops, no data ... Check your internet connection :]")
         }
 
 
-  constructor() {
-
-  }
+  constructor(private _lambdaPriceService:LambdaPriceService) {  }
 
   ngOnInit() {
-
+    this.prices = this._lambdaPriceService.getPrices();
+    //this.getPrices();
     this.initPromise();
     this.initAsync1();
     this.initAsync();
@@ -125,6 +128,29 @@ console.log("Oops, no data ... Check your internet connection :]")
       "Volume USD": 323053833.66
     }
   ];
+  
+  getPriceList():any {
+    console.log(this.prices);
+    return this.prices;
+  }
+ // lambda-price.service.ts
+ // price.model.ts
+// getPrices() {
+//   console.log("getPrices Service");
+//   this.lambdaPriceService.getPrices(); 
+//      this.listPrices = {
+//    // .subscribe((data: Price) => this.price = { 
+//       Symbol: Symbol, //data['Symbol'], 
+//       Date: Date, //  data['Date'], 
+//       Open: Open, //data['Open'],  
+//       High: High, // data['High'], 
+//       Low: Low, //data['Low'], 
+//       Close: Close, // data['Close']  
+//     });
+//     console.log(this.price)
+//     return this.price;
+// }
+
   afterTheDelay = function () {
     console.log("afterTheDelay");
     let outputPromise = "";
@@ -150,7 +176,6 @@ console.log("Oops, no data ... Check your internet connection :]")
       // }, 2000);
     });
   }
-
 
   initAsync = async function () {
     console.log("initAsync");

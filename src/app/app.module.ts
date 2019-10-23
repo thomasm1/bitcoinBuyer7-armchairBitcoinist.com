@@ -38,6 +38,8 @@ import { DetailsCoinComponent } from './coins/details/details-coin.component';
 import { AddCoinsComponent } from './coins/add/add-coins.component';
 
 import { UserService } from './services/user.service';
+import { LambdaPriceService } from './services/lambda-price.service';
+
 // import { UserListResolverService } from './services/user-list-resolver.service';
 // import { EditUserCanDeactivateGuardService } from './services/edit-user-can-deactivate-guard.service';
 // import { UserDetailsGuardService } from './services/user-details-guard.service';
@@ -120,6 +122,7 @@ import { HomeComponent } from './routes/home.component';
   providers: [
     UserService,
     SidebarService,
+    LambdaPriceService
     // EditUserCanDeactivateGuardService,
     // UserDetailsGuardService,
     // UserListResolverService
