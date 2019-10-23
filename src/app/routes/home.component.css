@@ -196,7 +196,6 @@ code span {
     margin-left:30px;
 }
 
-
 .hidden {
     display: none;
 }
@@ -205,4 +204,10 @@ code span {
 }
 .rightc {
     max-width:25%;
+}
+.request {
+    margin-top:39px;
+}
+li.bitDiv h6 {
+    text-align:left;
 }

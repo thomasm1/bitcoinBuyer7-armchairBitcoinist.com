@@ -2,77 +2,60 @@
     <h4>Serverless API: Crypto Historical Price Data</h4>
 </div>
 <div id="serverless" class="serverless">
-    <button class="btn btn-primary pull-right" (click)="getPriceList()">Update</button> &nbsp;
-    <button class="btn btn-primary pull-right" disabled (click)="coinLambda('ethereum')">Ethereum</button>&nbsp;
-    <button class="btn btn-primary pull-right" disabled (click)="coinLambda('litecoin')">Litecoin</button>&nbsp;
-    <button class="btn btn-primary pull-right  " (click)="coinLambda('bitcoin')">Bitcoin</button>&nbsp;
-
-
     <div class="row">
 
         <div class=" col col-xs-5 leftc">
-            <h5>Update High, Low, Open, Close</h5>
-            <ul id="coin-update">
+
+            <button class="btn btn-primary pull-right  " (click)="coinLambda('bitcoin')">Get All Prices</button>&nbsp;
+
+            <h5>2019 Prices </h5>
+            <ul id="coin-update"> 
             </ul>
         </div>
-             <div class=" col col-xs-5 leftc">
+        <div class=" col col-xs-5 leftc">
+            <button class="btn btn-primary pull-right" (click)="getPriceList()">Bitcoin</button> &nbsp;
+            <button class="btn btn-primary pull-right" disabled (click)="coinLambda('ethereum')">Ethereum</button>&nbsp;
+            <button class="btn btn-primary pull-right" disabled (click)="coinLambda('litecoin')">Litecoin</button>&nbsp;
+
             <h5>Daily High, Low, Open, Close</h5>
             <ul id="coin-price">
-                <li *ngFor="let price of prices" >
-                <!-- <li *ngIf="prices"  > --> 
-                   Symbol: {{ price.Symbol }}<br />
-                   Date: {{ price.Date }}<br />
-      Open: {{ price.Open }}<br />
-      High: {{ price.High }}<br />
-      Low: {{ price.Low }}<br />
-      Close: {{ price.Close }}<br />
-      VolumeBTC: {{ price.VolumeBTC }}<br />
-      VolumeUSD: {{ price.VolumeUSD }}<br /> 
-                   <hr>
+                <li *ngFor="let price of prices">
+                    <!-- <li *ngIf="prices"  > -->
+                    <strong>Symbol:</strong> {{ price.Symbol }}<br />
+                   <strong> Date:</strong> {{ price.Date }}<br />
+                    <strong>Open:</strong> {{ price.Open }}<br />
+                    <strong>High:</strong> {{ price.High }}<br />
+                    <strong>Low:</strong> {{ price.Low }}<br />
+                    <strong>Close:</strong>  {{ price.Close }}<br />
+                    <strong> VolumeBTC:</strong> {{ price.VolumeBTC }}<br />
+                    <strong>VolumeUSD:</strong> {{ price.VolumeUSD }}<br />
+                    <hr>
                 </li>
             </ul>
         </div>
         <div class=" col col-xs-5 rightc">
-            <h5>XMLHttpRequest</h5>
+            <h5 class="request">XMLHttpRequest</h5>
             <div id="coinJson">
             </div>
         </div>
     </div>
-    <small> <code>curl -X GET "https://jdkxd2ny04.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction"</code>
-        <p>1.) AWS API Gateway Endpoint <em>using</em>...<br /> 2.) AWS Route 53 A Record Set Alias
-            <em>using</em>...<br />
-            3.) AWS S3 files. GET Method button <em>triggers ...</em><br /> 4.) AWS Lambda Function <em>returning
-                ...</em>
-            JSON data.
-        </p></small>
+
 
 </div>
 <hr>
 
-<div id="serverless-service" class="serverless-service">
-
-    <div class="row">
-   
-        <!-- <div class=" col col-xs-5 rightc">  
-            <h5>XMLHttpRequest</h5>
-            <div id="coinJson">
-            </div>
-        </div> -->
-    </div>
-    <small> <code>curl -X GET "https://jdkxd2ny04.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction"</code>
-        <p>1.) AWS API Gateway Endpoint <em>using</em>...<br /> 2.) AWS Route 53 A Record Set Alias
-            <em>using</em>...<br />
-            3.) AWS S3 files. GET Method button <em>triggers ...</em><br /> 4.) AWS Lambda Function <em>returning
-                ...</em>
-            JSON data.
-        </p></small>
-
-</div>
-<div class="row">
-    <!-- <div class="dataGetters col col-xs-4">
+<code>curl -X GET "https://jdkxd2ny04.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction"</code>
+<p>1.) AWS API Gateway Endpoint <em>using</em>...<br /> 2.) AWS Route 53 A Record Set Alias
+    <em>using</em>...<br />
+    3.) AWS S3 files. GET Method button <em>triggers ...</em><br /> 4.) AWS Lambda Function <em>returning
+        ...</em>
+    JSON data.
+</p>
+<!-- <div class="dataGetters col col-xs-4">
         <div id="scraperBtc"></div>
         <div id="scraperEther"></div>
     </div> -->
+<!-- <div class="row">
     <div class="dataGetters col col-xs-6">
         <div id="fetchAsyncBtc"></div>
         <div id="fetchAsyncEther"></div>
@@ -82,4 +65,4 @@
         <div id="promiseAll"></div>
     </div>
 </div>
-<button (click)="initAsync1()">Historical Bitcoin Data</button>
+<button (click)="initAsync1()">Historical Bitcoin Data</button> -->
