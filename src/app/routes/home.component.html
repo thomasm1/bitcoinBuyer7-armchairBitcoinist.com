@@ -11,6 +11,29 @@
     <div class="dataGetters  col col-xs-6">
         <div id="promiseAll"></div>
     </div>
-</div>
-
+</div> 
 <button (click)="initAsync1()">Historical Bitcoin Data</button>
+<hr>
+ <div align="center">
+        <h4>Serverless API Serving Bitcoin Prices</h4>
+    </div>
+  <div id="serverless" class="serverless">  
+            <button class="btn btn-primary pull-right" (click)="coinLambda()"  >Get Prices: Make HTTP Call</button>
+      
+       
+        <div class="row">
+            <div class="col col-xs-5">
+                <h5>Response from XMLHttpRequest:</h5>
+                <div id="coinJson">
+                </div>
+            </div>
+            <div class="col col-xs-5">
+                <h5>Bitcoin Daily Prices:</h5>
+                <ul id="coinFormat">
+                </ul>
+            </div>
+        </div>
+        <code>curl -X GET "https://jdkxd2ny04.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction"</code> 
+          <p>1.) AWS API Gateway Endpoint <em>using</em>...<br /> 2.) AWS Route 53 A Record Set Alias <em>using</em>...<br /> 3.) AWS S3 files. GET Method button <em>triggers ...</em><br /> 4.) AWS Lambda Function <em>returning ...</em> JSON data.
+        </p>
+    </div>

@@ -161,3 +161,29 @@ code span {
     float: left;
     overflow: scroll;
 }
+
+.details {
+    color: white;
+}
+
+#tom-tom {
+    height: 300px;
+    background-color: rgba(250, 235, 215, 0.486);
+    padding: 5px;
+    margin: 5px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+#bitcoin {
+    height: 300px;
+    background-color: rgba(250, 235, 215, 0.486);
+    padding: 5px;
+    margin: 5px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.hidden {
+    display: none;
+}

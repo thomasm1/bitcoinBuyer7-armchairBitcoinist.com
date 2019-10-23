@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-makers.component.css']
 })
 export class DataMakersComponent implements OnInit {
- 
+
   Console:string = 'Array manipulation outputs to dev console ==>';  
  
   btc2019String = ` 
@@ -274,7 +274,7 @@ export class DataMakersComponent implements OnInit {
 
   
   ngOnInit() {
-  
+    
   const btc2019 = [
     {
       Date: "2019-07-04",
