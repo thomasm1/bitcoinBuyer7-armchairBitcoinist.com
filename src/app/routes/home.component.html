@@ -15,10 +15,12 @@
 <button (click)="initAsync1()">Historical Bitcoin Data</button>
 <hr>
  <div align="center">
-        <h4>Serverless API Serving Bitcoin Prices</h4>
+        <h4>Serverless API: Crypto Historical Price Data</h4>
     </div>
   <div id="serverless" class="serverless">  
-            <button class="btn btn-primary pull-right" (click)="coinLambda()"  >Get Prices: Make HTTP Call</button>
+            <button class="btn btn-primary pull-right"  (click)="coinLambda('bitcoin')"  >Bitcoin Data</button>&nbsp;
+            <button class="btn btn-primary pull-right"   (click)="coinLambda('ethereum')"  >Ethereum Data</button>&nbsp;
+            <button class="btn btn-primary pull-right"  (click)="coinLambda('litecoin')"  >Litecoin Data</button>&nbsp;
       
        
         <div class="row">
@@ -28,7 +30,7 @@
                 </div>
             </div>
             <div class="col col-xs-5">
-                <h5>Bitcoin Daily Prices:</h5>
+                <h5>Daily Highs, Lows, Open, Close:</h5>
                 <ul id="coinFormat">
                 </ul>
             </div>

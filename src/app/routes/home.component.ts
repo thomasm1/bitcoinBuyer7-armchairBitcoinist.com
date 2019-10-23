@@ -1,5 +1,6 @@
+// TODO ...
 // switch xhttp to http service
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  coinLambda = function() {
+  coinLambda = function(coinUrl) {  
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
+
                     document.getElementById("coinJson").innerHTML = this.responseText;
                     console.log(this.responseText);
                     var rParsed = JSON.parse(this.responseText);
@@ -29,12 +31,24 @@ export class HomeComponent implements OnInit {
 		  <hr>
 		  </li>
 		  `;
-                        document.getElementById('coinFormat').innerHTML += coins;
+   document.getElementById('coinFormat').innerHTML += coins;
                     }
-
-                }
+                } 
             };
-            xhttp.open("GET", "https://jdkxd2ny04.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction", true);
+// TODO - make service!!
+// make vars to get from service in constructor.. 
+      let vurl;
+      console.log(coinUrl);
+      if ('bitcoin' === coinUrl ) {
+vurl = "https://jdkxd2ny04.execute-api.us-east-1.amazonaws.com/prod/thomasMiltonFunction"
+      } else if ( 'ether' === coinUrl ) {
+vurl = "https://o8fasqpzp4.execute-api.us-east-1.amazonaws.com/prod/ThomasMiltonServerless"
+      } else if ('litecoin' === coinUrl ) {
+vurl = "https://ebdfwshgh4.execute-api.us-east-1.amazonaws.com/default/lambdaLitecoin"
+      } else {
+console.log("Oops, no data ... Check your internet connection :]")
+      }
+            xhttp.open("GET", vurl, true);
             xhttp.send();
         }
 

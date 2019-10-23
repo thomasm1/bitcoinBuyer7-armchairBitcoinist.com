@@ -166,7 +166,7 @@ code span {
     color: white;
 }
 
-#tom-tom {
+#coinJson {
     height: 300px;
     background-color: rgba(250, 235, 215, 0.486);
     padding: 5px;
@@ -175,7 +175,7 @@ code span {
     overflow-y: scroll;
 }
 
-#bitcoin {
+#coinFormat {
     height: 300px;
     background-color: rgba(250, 235, 215, 0.486);
     padding: 5px;
