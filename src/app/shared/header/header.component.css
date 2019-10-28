@@ -66,16 +66,17 @@ span.login {
 
 span.register {
     color: #00345f;
-    background-color: #71a9eb7d;
+    background-color: #71aaeb4d;
     border: solid 1px #f5d7a3;
     border-radius: 5px;
     padding: 0 4px 2px;
 }
 
 span.topheader {
-    font-size: 1rem;
+    font-size: .9rem;
     cursor: pointer;
     line-height: 1.2;
+    padding: 1px 4px 3px;
 }
 
 span.topheader:hover {

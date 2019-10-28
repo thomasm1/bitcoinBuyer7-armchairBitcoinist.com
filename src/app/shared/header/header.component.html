@@ -10,7 +10,7 @@
     <span class="login topheader">
 
         <ng-template #login>
-            <span (click)="auth.googleSignin()">Sign in with &nbsp;<img width="18vw" src="assets/google-logo.png"></span>
+            <span class="register" (click)="auth.googleSignin()">Sign in/Register with &nbsp;<img width="18vw" src="assets/google-logo.png"></span>
     </ng-template>
     <span *ngIf="auth.user$ | async as user; else login">
             <span (click)="auth.signOut()">Sign Out</span>

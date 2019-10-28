@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { AngularFirestore  } from '@angular/fire/firestore';
+import { AuthService } from '../../services/auth.service';
 // import { AppPasswordDirective } from './app-password.directive';
 import { tap, first } from 'rxjs/operators';
 
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
   loading = false;
   success = false;
 
-  constructor(private fb: FormBuilder, private afs: AngularFirestore) { }
+  constructor(private fb: FormBuilder, private afs: AngularFirestore, public auth: AuthService) { }
 
   ngOnInit() {
     const phone = this.fb.group({
