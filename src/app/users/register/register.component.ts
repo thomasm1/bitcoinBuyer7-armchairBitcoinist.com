@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { AngularFirestore  } from '@angular/fire/firestore';
+// import { AppPasswordDirective } from './app-password.directive';
 import { tap, first } from 'rxjs/operators';
 
 

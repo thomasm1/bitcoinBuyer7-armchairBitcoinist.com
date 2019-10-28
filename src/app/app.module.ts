@@ -59,6 +59,7 @@ import { DetailbarToggleComponent } from './shared/layout/detailbar-toggle.compo
 import { DetailbarComponent } from './shared/layout/detailbar.component';
 import { AccordionComponent } from './shared/layout/accordion.component';
 import { HomeComponent } from './routes/home.component';
+import { AppPasswordDirective } from './users/register/app-password.directive';
 
 // import { ApiService } from './services/api.service';
 
@@ -85,6 +86,7 @@ import { HomeComponent } from './routes/home.component';
     LandingComponent,
     AboutComponent,
     RegisterComponent,
+    AppPasswordDirective,
     FooterComponent,
     TermsComponent,
     NewsComponent,
