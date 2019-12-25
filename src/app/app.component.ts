@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError, NavigationCancel } from '@angular/router';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent { 
-  showLoadingIndicator = true;
+export class AppComponent {
+  title = 'armchair bitcoinist';
+    showLoadingIndicator = true;
 
   constructor(
     private _router: Router

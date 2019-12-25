@@ -14,28 +14,13 @@
 
             <div>
                 <mat-form-field>
-                   <div>
-                        <input matInput formControlName="password" type="password" placeholder="password"
-                            appPasswordDirective> 
-                    </div>
-                    <mat-hint align="end"> <em>alphanumeric password&nbsp;&nbsp;</em></mat-hint>
-                    <mat-error *ngIf="password.invalid && password.touched">Oops ... this password isn't alphanumeric :-)
-                    </mat-error>
-                </mat-form-field>
-
-            </div>
-            <!-- <div>
-                <mat-form-field>
-                    <div>
-                        <input matInput formControlName="password" type="password" placeholder="password 2"
-                            appPasswordDirective> 
-                    </div>
+                    <input matInput formControlName="password" placeholder="password">
                     <mat-hint align="end"> <em>alphanumeric password&nbsp;&nbsp;</em></mat-hint>
                     <mat-error *ngIf="password.invalid && password.touched">Oops ... this password doesn't fly!
                     </mat-error>
                 </mat-form-field>
 
-            </div> -->
+            </div>
             <div>
                 <mat-form-field>
                     <input matInput formControlName="age" placeholder="age">
@@ -47,15 +32,14 @@
             <div>
                 <mat-form-field>
                     <input matInput formControlName="email" placeholder="email">
-                    <mat-error *ngIf="email.invalid && email.touched">alpha-numeric-Oops ... This email doesn't look
-                        right!
+                    <mat-error *ngIf="email.invalid && email.touched">alpha-numeric-Oops ... This email doesn't look right!
                     </mat-error>
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field>
-                    <mat-select matInput formControlName="userGroup" placeholder="userGroup">
+                    <mat-select matInput formControlName="userGroup" placeholder="User Group">
                         <mat-option></mat-option>
                         <mat-option>CoinTrader</mat-option>
                         <mat-option>CoinTracker</mat-option>
@@ -63,9 +47,10 @@
                         <mat-option>AltCoinWatcher (free)</mat-option>
                         <!-- TODO: MAKE USERGROUP SERVICE! -->
 
-                        <!-- <ng-container *ngFor="let userGroup of userGroupService.array">
-                            <mat-option value="{{userGroup.$key}}">{{userGroup.code}}-{{userGroup.name}}</mat-option>
-                        </ng-container> -->
+                        <!-- <ng-container *ngFor="let userGroup of userGroupService.array"> -->
+                            <ng-container *ngFor="let userGroup of userGroups"> 
+                            <mat-option value="{{userGroup.$key}}">{{userGroup.id}}-{{userGroup.name}}</mat-option>
+                        </ng-container>
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -126,8 +111,7 @@
 
             <h6>
                 <mat-checkbox formControlName="agree">Everything look right?</mat-checkbox> &nbsp;
-                <button mat-raised-button color="primary" [disabled]="regForm.invalid" type="submit"
-                    color="primary">Register</button>
+                <button mat-raised-button color="primary" [disabled]="regForm.invalid" type="submit" color="primary">Register</button>
             </h6>
             <p class="required">* Required</p>
 </form>

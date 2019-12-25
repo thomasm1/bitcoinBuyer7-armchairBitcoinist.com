@@ -11,10 +11,10 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -59,7 +59,6 @@ import { DetailbarToggleComponent } from './shared/layout/detailbar-toggle.compo
 import { DetailbarComponent } from './shared/layout/detailbar.component';
 import { AccordionComponent } from './shared/layout/accordion.component';
 import { HomeComponent } from './routes/home.component';
-import { AppPasswordDirective } from './users/register/app-password.directive';
 
 // import { ApiService } from './services/api.service';
 
@@ -86,7 +85,6 @@ import { AppPasswordDirective } from './users/register/app-password.directive';
     LandingComponent,
     AboutComponent,
     RegisterComponent,
-    AppPasswordDirective,
     FooterComponent,
     TermsComponent,
     NewsComponent,
@@ -112,7 +110,7 @@ import { AppPasswordDirective } from './users/register/app-password.directive';
     FormsModule,
     ReactiveFormsModule,
 
-    NgbModule.forRoot(),
+    // NgbModule.forRoot(),
     BrowserAnimationsModule,
     MatInputModule,
     MatSelectModule,

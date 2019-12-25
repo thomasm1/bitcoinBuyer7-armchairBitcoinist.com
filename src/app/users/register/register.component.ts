@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { AngularFirestore  } from '@angular/fire/firestore';
-import { AuthService } from '../../services/auth.service';
-// import { AppPasswordDirective } from './app-password.directive';
 import { tap, first } from 'rxjs/operators';
-
+import { UserGroups} from '../../models/userGroups.model'
 
 @Component({
   selector: 'app-register',
@@ -13,12 +11,13 @@ import { tap, first } from 'rxjs/operators';
 })
 export class RegisterComponent implements OnInit {
 
+  userGroups: UserGroups;
   regForm: FormGroup;
   // form-state
   loading = false;
   success = false;
 
-  constructor(private fb: FormBuilder, private afs: AngularFirestore, public auth: AuthService) { }
+  constructor(private fb: FormBuilder, private afs: AngularFirestore) { }
 
   ngOnInit() {
     const phone = this.fb.group({
@@ -49,14 +48,23 @@ export class RegisterComponent implements OnInit {
       agree: [false, [
         Validators.requiredTrue
       ]],
-      userGroup: '',
+      // userGroup: '',
+      userGroup: []  = [  
+    {id:1, name: 'CoinTrader Premium'},
+    {id:2, name: 'CoinTrader'},
+    {id:3, name: 'CoinTracker'},
+    {id:4, name: 'CoinWatcher (free)'},
+    {id:5, name: 'AltCoinWatcher (free)'},
+    {id:6, name: 'Administration'} 
+  ],
       cellPhone: phone,
       workPhone: phone,
       phones: this.fb.array([])
     })
     this.regForm.valueChanges.subscribe(console.log)
+ 
   }
-
+  
   get email() {
     return this.regForm.get('email');
   }
@@ -88,6 +96,8 @@ export class RegisterComponent implements OnInit {
   deletePhone(i) {
     this.phoneForms.removeAt(i)
   }
+
+
 
   async submitHandler() {
     this.loading = true;
