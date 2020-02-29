@@ -12,7 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TermsComponent } from './routes/terms.component';
 // import { NewsComponent } from './routes/news.component';
 import { AddCoinsComponent } from './coins/add/add-coins.component';
-import { RegisterComponent } from './users/register/register.component';
+import { CreateUserComponent } from './users/register/create-user.component';
 import { LandingComponent } from './routes/landing.component';
 import { ApiComponent } from './components/api/api.component';
 import { AboutComponent } from './routes/about.component';
@@ -26,8 +26,8 @@ import { HomeComponent } from './routes/home.component';
 const routes: Routes = [
 
   {
-    path: 'register',
-    component: RegisterComponent
+    path: 'profile',
+    component: CreateUserComponent
   },
   {
     path: 'coin-tracker',

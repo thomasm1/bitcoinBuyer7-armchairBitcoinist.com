@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -43,9 +43,9 @@ import { LambdaPriceService } from './services/lambda-price.service';
 // import { UserListResolverService } from './services/user-list-resolver.service';
 // import { EditUserCanDeactivateGuardService } from './services/edit-user-can-deactivate-guard.service';
 // import { UserDetailsGuardService } from './services/user-details-guard.service';
-
+ 
 import { PageNotFoundComponent } from './routes/page-not-found.component';
-import { RegisterComponent } from './users/register/register.component';
+import { CreateUserComponent } from './users/register/create-user.component';
 import { LandingComponent } from './routes/landing.component';
 import { AboutComponent } from './routes/about.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -76,18 +76,18 @@ import { HomeComponent } from './routes/home.component';
     DisplayUserComponent,
     DetailsUserComponent,
     EditUserComponent,
-
+    
+    CreateUserComponent,
     ListCoinsComponent,
     DisplayCoinComponent,
     DetailsCoinComponent,
     AddCoinsComponent,
 
     LandingComponent,
-    AboutComponent,
-    RegisterComponent,
+    AboutComponent, 
     FooterComponent,
     TermsComponent,
-    NewsComponent,
+    NewsComponent, 
 
     PageNotFoundComponent,
     SidebarComponent,

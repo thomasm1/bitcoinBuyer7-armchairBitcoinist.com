@@ -1,7 +1,7 @@
-import { User } from './user.model';
+import { UserFirestore } from './user-firestore.model';
 
 describe('User.Model', () => {
   it('should edit an instance', () => {
-    expect(new User()).toBeTruthy();
+    expect(new UserFirestore()).toBeTruthy();
   });
 });

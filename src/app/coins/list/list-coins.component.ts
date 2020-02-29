@@ -12,9 +12,13 @@ export class ListCoinsComponent implements OnInit {
   constructor(private _coinService: CoinService) { }
   listCoins = []; 
   ngOnInit() {  
-  this.listCoins = this._coinService.getCoins();  
-  
-  console.log('Coins Component: ', this.listCoins);
+      this._coinService.getCoins()
+      .subscribe(
+        res => this.listCoins = res,
+        err => console.log(err)
+      )
+  // this.listCoins = this._coinService.getCoins();  
+  // console.log('Coins Component: ', this.listCoins);
   }
    
 }

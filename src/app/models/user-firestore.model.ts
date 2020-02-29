@@ -1,17 +1,16 @@
-export class User {
-    id: number;
+export class UserFirestore {
+    id?: number;
     uid?: string;
     userId?: string;
-    username?: string;
-    name: string; 
+    name?: string; 
     firstName?: string;
-    lastname?:string;
     lastName?:string;
     email?: string;
     phone?: number; 
     userGroup?: string;
-    contactType: string;
-    dateOfBirth: Date; 
-    isActive: boolean;
+    groupName?: string;
+    contactType?: string;
+    dateOfBirth?: Date; 
+    isActive?: boolean;
     photoPath?: string;
 }

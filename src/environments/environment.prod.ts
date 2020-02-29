@@ -1,5 +1,7 @@
 export const environment = {
   production: true, 
+     base_url: "https://ccgcdpvo25.execute-api.us-east-1.amazonaws.com/Armchair_Production/armchair-users",
+  aws_url: "https://ccgcdpvo25.execute-api.us-east-1.amazonaws.com/Armchair_Production/armchair-users",
   firebaseConfig : {
     apiKey: "AIzaSyBYsshLo1RFwQpM9pvHWTxv-VbMWUXOeKU",
     authDomain: "bitcoinbuyer-ce650.firebaseapp.com",

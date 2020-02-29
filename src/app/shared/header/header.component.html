@@ -16,18 +16,18 @@
             <span (click)="auth.signOut()">Sign Out</span>
     </span>
     </span> &nbsp;
-    <a routerLink="/register"><span class="login register topheader">Register</span></a>
+    <a routerLinkActive="active" routerLink="/profile"><span class="login register topheader">Profile</span></a>
 
     <span class=" pull-left  welcome" *ngIf="auth.user$ | async as user ">
            <span class="group"> {{ user.groupName }}</span> Welcome, <span class="uid">{{ user.name  }}</span>, to your Armchair Bitcoining Console!
     </span>
     <hr>
     <nav>
-        <a class=" " routerLink="/">Home</a>
-        <a class=" " routerLink="/console">Console</a>
-        <a class=" " routerLink="/coin-tracker">CoinTracker </a>
-        <a class=" " routerLink="/traders">Traders</a>
-        <a class=" " routerLink="/data">Analytics</a>
+        <a class=" " routerLinkActive="active" routerLink="/">Home</a>
+        <a class=" " routerLinkActive="active"  routerLink="/console">Console</a>
+        <a class=" " routerLinkActive="active" routerLink="/coin-tracker">CoinTracker </a>
+        <a class=" " routerLinkActive="active" routerLink="/traders">Traders</a>
+        <a class=" " routerLinkActive="active" routerLink="/data">Analytics</a>
         <!-- <a class=" " routerLink="/news">CryptoNews</a> -->
     </nav>
     <hr>
