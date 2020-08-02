@@ -27,6 +27,7 @@ import { ApiComponent } from './components/api/api.component';
 import { ApiItemComponent } from './components/api-item/api-item.component';
 import { AddApiComponent } from './components/add-api/add-api.component';
 
+import { RegisterComponent } from './users/register/register.component'
 import { ListUsersComponent } from './users/list/list-users.component';
 import { DisplayUserComponent } from './users/display/display-user.component';
 import { DetailsUserComponent } from './users/details/details-user.component';
@@ -36,6 +37,8 @@ import { ListCoinsComponent } from './coins/list/list-coins.component';
 import { DisplayCoinComponent } from './coins/display/display-coin.component';
 import { DetailsCoinComponent } from './coins/details/details-coin.component';
 import { AddCoinsComponent } from './coins/add/add-coins.component';
+import { CoinsComponent } from './coins/coins.component';
+import { MemberAltcoinsComponent } from './coins/member-altcoins.component';
 
 import { UserService } from './services/user.service';
 import { LambdaPriceService } from './services/lambda-price.service';
@@ -43,7 +46,7 @@ import { LambdaPriceService } from './services/lambda-price.service';
 // import { UserListResolverService } from './services/user-list-resolver.service';
 // import { EditUserCanDeactivateGuardService } from './services/edit-user-can-deactivate-guard.service';
 // import { UserDetailsGuardService } from './services/user-details-guard.service';
- 
+
 import { PageNotFoundComponent } from './routes/page-not-found.component';
 import { CreateUserComponent } from './users/register/create-user.component';
 import { LandingComponent } from './routes/landing.component';
@@ -67,6 +70,8 @@ import { HomeComponent } from './routes/home.component';
     AppComponent,
     HeaderComponent,
 
+    MemberAltcoinsComponent,
+    CoinsComponent,
     DataMakersComponent,
     ApiComponent,
     ApiItemComponent,
@@ -76,7 +81,7 @@ import { HomeComponent } from './routes/home.component';
     DisplayUserComponent,
     DetailsUserComponent,
     EditUserComponent,
-    
+    RegisterComponent,
     CreateUserComponent,
     ListCoinsComponent,
     DisplayCoinComponent,
@@ -84,10 +89,10 @@ import { HomeComponent } from './routes/home.component';
     AddCoinsComponent,
 
     LandingComponent,
-    AboutComponent, 
+    AboutComponent,
     FooterComponent,
     TermsComponent,
-    NewsComponent, 
+    NewsComponent,
 
     PageNotFoundComponent,
     SidebarComponent,

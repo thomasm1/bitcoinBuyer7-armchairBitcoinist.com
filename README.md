@@ -8,12 +8,13 @@ Identify best daily volume of trades on the exchange:
 Exchanges with very low volumes tend to lag behind in price movements, as well as make it harder for limit orders to be filled.
 List of the top exchanges, their volumes, and various other important pieces of information to help you choose.
 
-##### Server Hardware I
-Cloud Provider.... AWS 
+### Overarching Philosophy
 
-##### Hardware Phase II
-Raspberry Pi 
- 
+“Typically, momentum trading is effective in markets that 1) do not have valuation models, 2) have large amounts of volatility, and 3) have frequent mispricings. Momentum investing is not typically used in US stocks, bonds, or options – as they have clear valuation models (e.g. discounted cash flow analysis for stocks and black Scholes for options). However, for commodities and assets like crypto – momentum trading can be an effective strategy that allows protection from losses in downtrends and capture subside on the uptrends. Based on historical data, this may be an extremely effective strategy – until a valuation model has been figured out.” 1
+
+
+[using a strategy to] "... edit deep reinforcement learning agents that learn to make money trading Bitcoin. ... to experiment with state-of-the-art deep reinforcement learning technologies to see if we can edit profitable Bitcoin trading bots. It seems to be the status quo to quickly shut down any attempts to edit reinforcement learning algorithms, as it is “the wrong way to go about building a trading algorithm”. However, recent advances in the field have shown that RL agents are often capable of learning much more than supervised learning agents within the same problem domain." 2
+
 
 ### Bot Constraints
 *The bot will only ever be in one of two states: BUY or SELL. It will not place various buy or sell orders consecutively at multiple price points. If its last operation was a sale, it will try to buy next.
@@ -46,34 +47,101 @@ STOP_LOSS_THRESHOLD : Ideally, we would only want our bot to sell when it makes 
 Here, we bought at the point marked with “BUY”. Then, we met our upper threshold before the lower one, meaning we sold our asset for a profit.
 
 #### API Helper Functions
-```shell
+```java
+ private static List<Balance> balances = new ArrayList<>();
+public class ApiHelpFunction {
  
+ @Autowired
+ private BalanceService balanceService;
+
+ @GetMapping(path="/_SOME_EXCHANGE/api/balances")
+ public List<Balance> getAllBalances(@PathVariable String username) {
+    // GET request to exchange API for account's balances     
+    return balanceService.findAll();
+ }
+ @GetMapping(path="/_SOME_EXCHANGE/api/marketprice")
+ public  <MarketPrice> getAssetMarketPrice(@PathVariable String username,@PathVariable String assetname) {
+    // GET request to exchange API for current price of asset   
+    return balanceService.findAll();
+ }
+// FUNCTION placeSellorder() {
+// DO 1. Calculate amount to sell ... based on threshold, e.g. 50% of total balance.
+// DO 2. Send a POST request to exchange API to do a SELLL operation
+// RETURN Price at operation execution
+// }
+
+// FUNCTION placeBuyOrder() {
+// DO 1. Calculate amount to buy ... based on threshold, e.g. 50% of total balance.
+// DO 2. Send a POST request to exchange API to do a Buy operation
+// RETURN Price at operation execution
+// }
+
+// FUNCTION getOperationDetails(String operationId) {
+// DO 1. GET Request to API for the details of operation
+// RETURN operationDetails
 ```
 
-#### Bot Loop Cycle decision-making flow. 
-Now that we have our helper functions, let’s start to define the workflow of the bot. The first thing we need is an infinite loop with some sleep time. Let’s say we want the bot to try to make an operation every 30 seconds.
+#### Bot Loop Cycle decision-making Workflow of the bot
+1.  infinite loop with some sleep time & operation every 30 seconds.
 ```shell
- 
+// Function startBot() {
+// INFINITE LOOP 
+// 1. attemptToMakeTrade()
+// 2. sleep(30)
+}
 ```
 
 #### Loop Function decision-making flow 
 Paired up with the helper functions and the loop function, which could also be main
 ```shell
- 
+private static boolean isNextOperationBuy = true;
+private static float upwardTrendThreshold = 2.25;
+private static float dipThreshold = 2.25;
+private static float profitThreshold = 1.25;
+private static float stopLossThreshold = -2.00;
+
+private static float lastOpPrice = 100.00
+
+// Function attemptToMakeTrade() {
+    private float currentPrice = getMarketPrice()
+    private float percentageDiff = (currentPrice - lastOpPrice)/lastOpPrice*100
+    
+    if (isNextOperationBuy) {
+        tryToBuy(percentgeDiff)
+    } else { 
+        tryToSell(percentageDiff)
+}
+
+// FUNCTION tryToBuy(float percentageDiff) {
+    if (percentageDiff >= upwardTrendThreshold || percentageDiff <= dipThreshold {
+        lastOpPrice = placeBuyOrder();
+        isNextOperationBuy = false;
+}
+// FUNCTION tryToSell(float percentageDiff) {
+    if  (percentageDiff >= upwardTrendThreshold || percentageDiff <= dipThreshold {
+               lastOpPrice = placeSellOrder();
+               isNextOperationBuy = true;
+       }
 ```
 
 ### LOGS
 The logs that went to the file would also get a timestamp added to them, so when I accessed the server after a whole day and found an error, for example, I could trace it back exactly to where it happened, as well as find out everything else the bot did along the way.
 ```shell
+"""
 [BALANCE] USD Balance = 22.15$
 [BUY] Bought 0.002 BTC for 22.15 USD
 [PRICE] Last Operation Price updated to 11,171.40 (BTC/USD)
 [ERROR] Could not perform SELL operation - Insufficient balance
+"""
 ```
+
 #### CreateLog
 Setup of a createLog function that is called at every step. 
 ```shell
- 
+// FUNCTION createLog(String message) {
+//DO 1. Print message to terminal
+// DO 2. append message to log file with timestamp
+}
 ```
 ### Identifying Trends
 The main goal of our bot should be to buy at a low price and sell at a profit. However, we have two thresholds that kind of contradict this idea:UPWARD_TREND_THRESHOLD and STOP_LOSS_THRESHOLD .
@@ -116,12 +184,15 @@ In order to make a profit, you need to perform a BUY and then a SELL operation, 
 As such, you need to make sure that you only sell for a profit once you’re able to at least cover your fees, otherwise you will actually be making a loss.
 Think about it, assuming fees were flat, if you bought an asset for 100.00$, incurring a 0.50$ fee, and then sold it for 100.75$, again with a 0.50$ fee, you would have made a gross profit of 0.75%, but, in actuality, you would have a net loss of 0.25%.
 
-### Overarching Philosophy
+##### Server Hardware I
+Cloud Provider.... AWS 
 
-“Typically, momentum trading is effective in markets that 1) do not have valuation models, 2) have large amounts of volatility, and 3) have frequent mispricings. Momentum investing is not typically used in US stocks, bonds, or options – as they have clear valuation models (e.g. discounted cash flow analysis for stocks and black Scholes for options). However, for commodities and assets like crypto – momentum trading can be an effective strategy that allows protection from losses in downtrends and capture subside on the uptrends. Based on historical data, this may be an extremely effective strategy – until a valuation model has been figured out.” 1
-
-
-[using a strategy to] "... edit deep reinforcement learning agents that learn to make money trading Bitcoin. ... to experiment with state-of-the-art deep reinforcement learning technologies to see if we can edit profitable Bitcoin trading bots. It seems to be the status quo to quickly shut down any attempts to edit reinforcement learning algorithms, as it is “the wrong way to go about building a trading algorithm”. However, recent advances in the field have shown that RL agents are often capable of learning much more than supervised learning agents within the same problem domain." 2
+##### Hardware Phase II
+Raspberry Pi 
+ 
+#### Software UI - Angular 10
+#### Software APP - Java 8/ Hibernate/ Oracle 12 SQL
+ 
 #### References
 ###### BTC, ETH datasource  
 ###### 0. https://www.cryptodatadownload.com/data/northamerican/
