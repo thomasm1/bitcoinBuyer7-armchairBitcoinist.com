@@ -1,6 +1,8 @@
 <div class="list-coins">
     <h3>CoinTracker Page</h3>
    <div class="row mt-5">
+
+    <div *ngIf="showLoadingIndicator" class="spinner"></div>
   <div class="col-md-4 mb-3" *ngFor="let coin of listCoins">
     <div class="card text-center">
       <div class="card-body">

@@ -8,17 +8,21 @@ import { CoinService } from '../../services/coin.service';
   styleUrls: ['./list-coins.component.css']
 })
 export class ListCoinsComponent implements OnInit {
-
+  showLoadingIndicator = false;
   constructor(private _coinService: CoinService) { }
-  listCoins = []; 
-  ngOnInit() {  
+  listCoins = [];
+  ngOnInit() {
+    this.showLoadingIndicator = true;
       this._coinService.getCoins()
       .subscribe(
-        res => this.listCoins = res,
+        (res) => {
+          this.listCoins = res;
+          this.showLoadingIndicator = false;
+        },
         err => console.log(err)
       )
-  // this.listCoins = this._coinService.getCoins();  
+  // this.listCoins = this._coinService.getCoins();
   // console.log('Coins Component: ', this.listCoins);
   }
-   
+
 }

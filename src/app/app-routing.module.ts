@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // import { ListUsersComponent } from './users/list/list-users.component';
-// import { EditUserComponent } from './users/edit/edit-user.component'; 
+// import { EditUserComponent } from './users/edit/edit-user.component';
 // import { DetailsUserComponent } from './users/details/details-user.component';
 
 // import { UserListResolverService } from './services/user-list-resolver.service';
@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'coin-tracker',
-    component: ListCoinsComponent, canActivate: [AuthGuard]
+    component: ListCoinsComponent
   },
   {
     path: 'terms',
@@ -47,7 +47,7 @@ const routes: Routes = [
   },
   {
     path: 'console',
-    component: ApiComponent
+    component: ApiComponent, canActivate: [AuthGuard]
   },
   {
     path: 'about',
@@ -58,13 +58,13 @@ const routes: Routes = [
     component: DataMakersComponent
   },
   {
-    path: '', 
+    path: '',
     component: HomeComponent
   },
 
   { path: 'notfound', component: PageNotFoundComponent },
 
-  { path: '**', redirectTo: '/console', pathMatch: 'full' }
+  { path: '**', redirectTo: '/', pathMatch: 'full' }
   // {
   //   path: '',
   //   component: ListUsersComponent,
@@ -81,7 +81,7 @@ const routes: Routes = [
   //   path: 'edit/:id',
   //   component: EditUserComponent,
   //   canDeactivate: [EditUserCanDeactivateGuardService]
-  // }, 
+  // },
 
   // {
   //   path: '',

@@ -9,7 +9,8 @@
             <button class="btn btn-primary pull-right  " (click)="coinLambda('bitcoin')">Get All Prices</button>&nbsp;
 
             <h5>2019 Prices </h5>
-            <ul id="coin-update"> 
+            <ul id="coin-update">
+              <span *ngIf="showLoadingIndicator" class="spinner"></span>
             </ul>
         </div>
         <div class=" col col-xs-5 leftc">

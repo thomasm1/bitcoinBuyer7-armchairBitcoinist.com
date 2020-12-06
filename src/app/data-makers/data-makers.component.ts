@@ -10,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataMakersComponent implements OnInit {
 
-  Console:string = 'Array manipulation outputs to dev console ==>';  
- 
-  btc2019String = ` 
+  Console:string = 'Array manipulation outputs to dev console ==>';
+
+  btc2019String = `
   [
     {
       Date: "2019-07-04",
@@ -55,7 +55,7 @@ export class DataMakersComponent implements OnInit {
       "Volume USD": 396857365.17
     }
   ];
-    
+
   const ethBtc = [
     {
       Date: "2019-07-04",
@@ -139,7 +139,7 @@ export class DataMakersComponent implements OnInit {
     }
   ] `
   dataMakers:string = `
-  console.log("%c Object mapping: ", "color:orange; border:solid 1px orange") 
+  console.log("%c Object mapping: ", "color:orange; border:solid 1px orange")
   //0-A.)
   console.time("timer_Obj-A.");
   for (const key in btc2019[0]) {
@@ -188,9 +188,9 @@ export class DataMakersComponent implements OnInit {
     console.log(btc.Symbol, btc.Date, btc.High);
   });
   console.timeEnd("timer_forEach");
-  
-  
-  console.log("%c Array mapping: ", "color:orange; border:solid 1px orange") 
+
+
+  console.log("%c Array mapping: ", "color:orange; border:solid 1px orange")
   //
   let canSell = [];
   for (let i = 0; i < btc2019.length; i++) {
@@ -231,8 +231,8 @@ export class DataMakersComponent implements OnInit {
   //     return -1;
   //   }
   // });
-  
-  console.log("%c Sorting: ", "color:orange; border:solid 1px orange") 
+
+  console.log("%c Sorting: ", "color:orange; border:solid 1px orange")
   const sortedBtc = btc2019.sort((a, b) => (a.Open > b.Open ? 1 : -1));
   const sortedB = btc2019.sort((a, b) => a.Open - b.Open);
   console.log(sortedBtc, sortedB);
@@ -253,15 +253,15 @@ export class DataMakersComponent implements OnInit {
   ); //  !!! fix absolutes logic
   const closeIAvg = closeIntTot / btc2019.length;
   console.log("sum: " + closeIntTot, "avg: " + closeIAvg);
-  
-  console.log("%c Filtering out negative days: ", "color:orange; border:solid 1px orange") 
+
+  console.log("%c Filtering out negative days: ", "color:orange; border:solid 1px orange")
   // filter out negative days, calc
   const avgPosOnly = btc2019
   .filter(btc => btc.Close - btc.Open >= 0)
   .map(btc => (btc.Close - btc.Open) / btc2019.length); ///calc each avg
   console.log(avgPosOnly);
   //
-  console.log("%c Calc Avg, Sum each pos avg, reduce to total: ", "color:orange; border:solid 1px orange") 
+  console.log("%c Calc Avg, Sum each pos avg, reduce to total: ", "color:orange; border:solid 1px orange")
   const avgPosLong = btc2019
   .filter(btc => btc.Close - btc.Open >= 0)
   .map(btc => (btc.Close - btc.Open) / btc2019.length) ///calc each avg
@@ -272,9 +272,9 @@ export class DataMakersComponent implements OnInit {
   `
   constructor() {     }
 
-  
+
   ngOnInit() {
-    
+
   const btc2019 = [
     {
       Date: "2019-07-04",
@@ -317,7 +317,7 @@ export class DataMakersComponent implements OnInit {
       "Volume USD": 396857365.17
     }
   ];
-    
+
   const ethBtc = [
     {
       Date: "2019-07-04",
@@ -399,9 +399,9 @@ export class DataMakersComponent implements OnInit {
       "Volume ETH": 184436.14,
       "Volume USD": 53230192.12
     }
-  ]; 
- 
-console.log("%c Object mapping: ", "color:orange; border:solid 1px orange") 
+  ];
+
+console.log("%c Object mapping: ", "color:orange; border:solid 1px orange")
 //0-A.)
 console.time("timer_Obj-A.");
 for (const key in btc2019[0]) {
@@ -452,7 +452,7 @@ btc2019.forEach(function(btc) {
 console.timeEnd("timer_forEach");
 
 
-console.log("%c Array mapping: ", "color:orange; border:solid 1px orange") 
+console.log("%c Array mapping: ", "color:orange; border:solid 1px orange")
 //
 let canSell = [];
 for (let i = 0; i < btc2019.length; i++) {
@@ -494,7 +494,7 @@ console.log(coinSquareRoot, coinSquare);
 //   }
 // });
 
-console.log("%c Sorting: ", "color:orange; border:solid 1px orange") 
+console.log("%c Sorting: ", "color:orange; border:solid 1px orange")
 const sortedBtc = btc2019.sort((a, b) => (a.Open > b.Open ? 1 : -1));
 const sortedB = btc2019.sort((a, b) => a.Open - b.Open);
 console.log(sortedBtc, sortedB);
@@ -516,14 +516,14 @@ const closeIntTot = btc2019.reduce(
 const closeIAvg = closeIntTot / btc2019.length;
 console.log("sum: " + closeIntTot, "avg: " + closeIAvg);
 
-console.log("%c Filtering out negative days: ", "color:orange; border:solid 1px orange") 
+console.log("%c Filtering out negative days: ", "color:orange; border:solid 1px orange")
 // filter out negative days, calc
 const avgPosOnly = btc2019
 .filter(btc => btc.Close - btc.Open >= 0)
 .map(btc => (btc.Close - btc.Open) / btc2019.length); ///calc each avg
 console.log(avgPosOnly);
 //
-console.log("%c Calc Avg, Sum each pos avg, reduce to total: ", "color:orange; border:solid 1px orange") 
+console.log("%c Calc Avg, Sum each pos avg, reduce to total: ", "color:orange; border:solid 1px orange")
 const avgPosLong = btc2019
 .filter(btc => btc.Close - btc.Open >= 0)
 .map(btc => (btc.Close - btc.Open) / btc2019.length) ///calc each avg
