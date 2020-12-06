@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UserGroup } from '../../models/userGroup.model'; 
+import { UserGroup } from '../../models/userGroup.model';
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -18,23 +18,23 @@ export class CreateUserComponent implements OnInit {
   previewPhoto = false;
   panelTitle:string;
   dateOfBirth: Date = new Date(2018,0,30)
-  @ViewChild('userForm') public createUserForm: NgForm;
-  
-  user: User; 
+ @ViewChild('userForm', {static: false}) public createUserForm: NgForm;
 
-  userGroups: UserGroup[] = [  
+  user: User;
+
+  userGroups: UserGroup[] = [
     {id:1, name: 'CoinTrader Premium'},
     {id:2, name: 'CoinTrader'},
     {id:3, name: 'CoinTracker'},
     {id:4, name: 'CoinWatcher (free)'},
     {id:5, name: 'AltCoinWatcher (free)'},
-    {id:6, name: 'Administration'} 
+    {id:6, name: 'Administration'}
   ];
-  constructor(private _userService: UserService, 
+  constructor(private _userService: UserService,
               private _router: Router,
               private _route: ActivatedRoute) {
 
-    this.datePickerConfig = Object.assign({}, 
+    this.datePickerConfig = Object.assign({},
       {
         containerClass: 'theme-dark-blue',
         // showWeekNumbers: true,
@@ -42,7 +42,7 @@ export class CreateUserComponent implements OnInit {
         // maxDate: new Date(2018, 11,31),
         dateInputFormat: 'yyyy-MM-dd'
       });
-      
+
   }
 
   ngOnInit() {
@@ -52,23 +52,23 @@ export class CreateUserComponent implements OnInit {
     })
   }
 
-    
+
   private getUser(id) {
     if(id===0) {
       this.user  = {
         id: null,
-        name: null, 
+        name: null,
         username: null,
         firstName: null,
         lastName: null,
-        email: '', 
-        phone: null, 
-        contactType: null, 
-        userGroup: 'select', // 'null', // 
-        dateOfBirth: null, 
+        email: '',
+        phone: null,
+        contactType: null,
+        userGroup: 'select', // 'null', //
+        dateOfBirth: null,
         isActive: null,
-        photoPath: 'assets/images/m.png' 
-      }; 
+        photoPath: 'assets/images/m.png'
+      };
       this.panelTitle = 'Profile';
       this.createUserForm.reset();
     } else {
@@ -84,7 +84,7 @@ export class CreateUserComponent implements OnInit {
   togglePhotoPreview() {
     this.previewPhoto = !this.previewPhoto;
   }
-  saveUser(): void { 
+  saveUser(): void {
     // const newUser: User = Object.assign ({}, this.user); //no longer worry about addressing reference var
     //this._userService.save(newUser)(
       // this._userService.save(this.user).subscribe(
@@ -99,13 +99,13 @@ export class CreateUserComponent implements OnInit {
         );
       } else {
         this._userService.updateUser(this.user).subscribe(
-          () => { 
+          () => {
             this.createUserForm.reset();
             this._router.navigate(['/']);
           },
           (error: any) => console.log(error)
         );
-      } 
-   
+      }
+
   }
 }
