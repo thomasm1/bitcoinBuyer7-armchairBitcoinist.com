@@ -12,29 +12,58 @@ export class HomeComponent implements OnInit {
   /////////// MUST CONVERT TO TYPESCRIPT!!!! //////////////////
   // price:Price[];
   prices: any;
-  showLoadingIndicator = false;
+  clear = function () {
+    document.getElementById("coin-update").innerHTML = ``
+  }
+  tempData = function () {
+    let r = [
+      {
+        "id": 9928382,
+        "unix": 1607040000,
+        "date": "2020-12-04 00:00:00",
+        "symbol": "BTC/USD",
+        "open": 19446.43,
+        "high": 19546.46,
+        "low": 18576.05,
+        "close": 18675.01,
+        "volto": 16343.35650594,
+        "volfrom": 305212346.18199456
+      },
+    ];
+    document.getElementById("coin-update").innerHTML = `
+<li id="${r[0].date}" class="bitDiv">
+<h6><strong>${r[0].symbol}:&nbsp;  ${r[0].date} </strong> </h6>
+<p>Open: ${r[0].open}    &nbsp;&nbsp;&nbsp;&nbsp; Low: ${r[0].low}</p>
+<p>Close: ${r[0].close}   &nbsp;&nbsp;&nbsp;&nbsp; High: ${r[0].high}</p>
+<div>Volume BTC: ${r[0].volto}
+</div>
+<div>Volume USD: ${r[0].volfrom}
+</div>
+<hr>
+</li>
+`;
+  };
 
   coinLambda = function (coinUrl) {
-    document.getElementById("coin-update").innerHTML = "";
-
+    document.getElementById("coin-update").innerHTML = '';
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("coinJson").innerHTML = this.responseText;
+        // document.getElementById("coinJson").innerHTML = this.responseText;
         console.log(this.responseText);
         var rParsed = JSON.parse(this.responseText);
         console.log(rParsed.body);
         var r = rParsed.body;
         for (let i = 0; i < r.length; i++) {
           var coins = `
-		  <li id="${r[i].Date}" class="bitDiv">
-		  <h6><strong>${r[i].Symbol}:&nbsp;  ${r[i].Date} </strong> </h6>
-		  <p>Open: ${r[i].Open}    &nbsp;&nbsp;&nbsp;&nbsp; Low: ${r[i].Low}</p>
-		  <p>Close: ${r[i].Close}  &nbsp;&nbsp;&nbsp;&nbsp; High: ${r[i].High}</p>
-	<!--  <div>Volume BTC: ${r[i].BTC}
-		  </div>
-		  <div>Volume USD: ${r[i].USD}
-		  </div> -->
+		  <li id="${r[i].date}" class="bitDiv">
+		  <h6><strong>${r[i].symbol}:&nbsp;  ${r[i].date} </strong> </h6>
+		  <p>Open: ${r[i].open}    &nbsp;&nbsp;&nbsp;&nbsp; Low: ${r[i].low}</p>
+		  <p>Close: ${r[i].close}  &nbsp;&nbsp;&nbsp;&nbsp; High: ${r[i].high}</p>
+      <div>Volume BTC: ${r[i].volto}
+      </div>
+      <div>Volume USD: ${r[i].volfrom}
+      </div>
 		  <hr>
 		  </li>
 		  `;
@@ -42,11 +71,7 @@ export class HomeComponent implements OnInit {
         }
       }
     };
-    if (document.getElementById("coin-update").innerHTML == "") {
-      this.showLoadingIndicator = true;
-    } else {
-      this.showLoadingIndicator = false;
-    }
+
     // TODO - make service!!
     // make vars to get from service in constructor..
     let vurl;
@@ -71,6 +96,7 @@ export class HomeComponent implements OnInit {
   constructor(private _lambdaPriceService: LambdaPriceService) {}
 
   ngOnInit() {
+    this.tempData();
     this.prices = this._lambdaPriceService.getPrices();
     //this.getPrices();
     // this.initPromise();

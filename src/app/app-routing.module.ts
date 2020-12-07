@@ -43,7 +43,7 @@ const routes: Routes = [
   },
   {
     path: 'traders',
-    component: LandingComponent
+    component: LandingComponent, canActivate: [AuthGuard]
   },
   {
     path: 'console',
