@@ -154,15 +154,6 @@ code span {
     max-height:200px;
 }
 
-.dataXMLH {
-    background-color: aliceblue;
-    border: solid 1px orange;
-    width: 45%;
-    height: 250px;
-    float: left;
-    overflow: scroll;
-}
-
 .details {
     color: white;
 }
@@ -176,7 +167,7 @@ code span {
     overflow-y: scroll;
 }
 #coin-price {
-    width:300px;
+    max-width:350px;
     height: 350px;
     background-color: rgba(250, 235, 215, 0.486);
     padding: 5px;
@@ -200,35 +191,14 @@ code span {
     display: none;
 }
 .leftc {
-    max-width:70%;
+    /* max-width:70%; */
 }
 .rightc {
-    max-width:25%;
+    /* max-width:25%; */
 }
 .request {
     margin-top:39px;
 }
 li.bitDiv h6 {
     text-align:left;
-}
-
-.spinner {
-  border: 16px solid #337ab7;
-  border-top: 16px solid silver;
-  border-radius: 50%;
-  width: 95px;
-  height: 95px;
-  animation: spin 700ms linear infinite;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-@keyframes spin {
-  0% {
-      transform: rotate(0deg)
-  }
-  100% {
-      transform: rotate(-360deg)
-  }
 }

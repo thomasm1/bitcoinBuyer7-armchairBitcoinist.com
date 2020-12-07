@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "password": "password",
+      "uid": "43uxxxid",
+      "username": "myUserName",
+      "firstname": "a;lsdfkj",
+      "lastname": "das;lkfj",
+      "lastName": "lastname",
+      "email": "thomasm1.maestas@gmail.com",
+      "phone": 5550005555,
+      "contactType": "email",
+      "userGroup": "5",
+      "dateOfBirth": "2020/09/03",
+      "isActive": true,
+      "photoPath": "assets/images/a.png"
+    },
+    {
+      "id": "DFPd2Vj",
+      "name": "t",
+      "username": null,
+      "firstName": null,
+      "lastName": null,
+      "email": "t@t.com",
+      "phone": null,
+      "contactType": null,
+      "userGroup": "select",
+      "dateOfBirth": null,
+      "isActive": null,
+      "photoPath": "assets/images/m.png"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

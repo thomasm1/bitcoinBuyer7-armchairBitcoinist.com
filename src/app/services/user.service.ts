@@ -4,14 +4,14 @@ import { User } from '../models/user.model';
 // import { Observable } from 'rxjs/Observable';
 // import 'rxjs/add/observable/of';
 // import 'rxjs/add/observable/map';
-// import 'rxjs/add/observable/delay';   
-// import { HttpClient } from '@angular/common/http'; 
+// import 'rxjs/add/observable/delay';
+// import { HttpClient } from '@angular/common/http';
  import {map, catchError} from 'rxjs/operators';
 
 import { Observable, throwError } from 'rxjs';
-// import 'rxjs/add/observable/of' from 'rxjs'; 
+// import 'rxjs/add/observable/of' from 'rxjs';
 // import 'rxjs/add/observable/map';
-// import 'rxjs/add/observable/delay';  
+// import 'rxjs/add/observable/delay';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 // import { ErrorObservable } from 'rxjs/observable';
 import { environment } from '../../environments/environment';
@@ -22,13 +22,13 @@ import { environment } from '../../environments/environment';
 export class UserService {
 private baseUrl: string;
   private newId: number;
-  private listUsers: User[] = []; 
-  private listUsersFirestore: UserFirestore[] = []; 
+  private listUsers: User[] = [];
+  private listUsersFirestore: UserFirestore[] = [];
 
 
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = environment.aws_url; // AWS ENDPOINT: 
+    this.baseUrl = environment.aws_url; // AWS ENDPOINT:
   this.getUsers().subscribe(
                 data => {
                   this.listUsers = data;
@@ -99,7 +99,7 @@ private baseUrl: string;
       );
     // const i = this.listUsers.findIndex(u => u.id === id);
     // if (i !== -1) {
-    //   this.listUsers.splice(i, 1); 
+    //   this.listUsers.splice(i, 1);
   }
 
   private listUsersUserFirestore: UserFirestore[] =
@@ -137,8 +137,8 @@ private baseUrl: string;
 
   // getUsers(): Observable<User[]> {
   //   return this.httpClient.get<User[]>('http://localhost:3000/users')
-  // } 
-  
+  // }
+
     // getUsers(): Observable<User[]> {
   //   return Observable.of(this.listUsers);
   // }
@@ -162,9 +162,9 @@ private baseUrl: string;
     } else {
       const foundIdx = this.listUsers.findIndex(u => u.id === user.id);
       this.listUsersFirestore[foundIdx] = user;
-    } 
-  } 
-  
+    }
+  }
+
 // TODO :DELETE: Needs administaration guard:::: TODO
 // deleteUser(id: number) {
 //     const i = this.listUsers.findIndex(u => u.id === id);

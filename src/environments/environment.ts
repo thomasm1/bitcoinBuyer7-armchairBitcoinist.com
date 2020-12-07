@@ -3,9 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false, 
+  production: false,
   base_url: "http://localhost:3000/users",
   // AWS Lambda-DynamoDB-APIgateway
+  // aws_url: "http://localhost:3000/users",
   aws_url: "https://ccgcdpvo25.execute-api.us-east-1.amazonaws.com/Armchair_Production/armchair-users",
   firebaseConfig : {
     apiKey: "AIzaSyBYsshLo1RFwQpM9pvHWTxv-VbMWUXOeKU",
